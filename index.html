@@ -31,6 +31,20 @@
     .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem}.step{background:#fff;border:1px solid var(--line);padding:.7rem;border-radius:12px;font-size:.8rem;color:var(--navy);text-align:center}
     .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem}.stat{background:#fff;border:1px solid var(--line);padding:.75rem;border-radius:12px;text-align:center}.stat b{font-family:'Sora',sans-serif;color:var(--blue);font-size:1.1rem;display:block}
     .channels{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.45rem}.chip{background:#fff;border:1px solid var(--line);padding:.38rem .7rem;border-radius:999px;font-size:.78rem;color:var(--navy)}
+    .service-categories{margin-top:.8rem;display:grid;gap:.6rem}
+    .service-scroll{display:flex;gap:.7rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.25rem}
+    .service-scroll::-webkit-scrollbar{height:8px}
+    .service-scroll::-webkit-scrollbar-thumb{background:#c9d5ef;border-radius:999px}
+    .category-card{min-width:min(315px,86vw);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem;box-shadow:var(--shadow)}
+    .category-head{display:flex;align-items:center;justify-content:space-between;gap:.4rem;margin-bottom:.45rem}
+    .category-head h3{font-size:.95rem;color:var(--navy)}
+    .badge{background:#eaf0ff;color:var(--blue);font-size:.72rem;padding:.22rem .55rem;border-radius:999px;font-weight:700}
+    .category-main{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.45rem}
+    .main-item{background:#f3f7ff;border:1px solid #dde7ff;color:var(--navy);font-size:.77rem;padding:.25rem .55rem;border-radius:999px}
+    .sub-title{font-size:.78rem;color:#7584a8;margin-bottom:.2rem}
+    .sub-list{margin:0;padding-right:1rem}
+    .sub-list li{font-size:.78rem;color:var(--muted);line-height:1.9}
+    .scroll-hint{font-size:.74rem;color:#8091b6;margin-top:.15rem}
     footer{margin-top:.8rem;padding:1rem;border-top:1px solid var(--line);text-align:center;font-size:.77rem;color:#8a96b4}
     @media (max-width:920px){.hero-grid,.cards,.split,.steps,.stats{grid-template-columns:1fr}}
   </style>
@@ -65,6 +79,46 @@
       <div class="split" style="margin-top:.7rem">
         <article class="card"><h3>پشتیبانی فنی</h3><p>مدیریت و نگهداری سرورها و سیستم‌ها.</p><ul class="list"><li>پشتیبانی ویندوز سرور</li><li>پشتیبانی لینوکس</li><li>رفع خطا و بهینه‌سازی سیستم‌ها</li></ul></article>
         <article class="card"><h3>خدمات مالی و پرداخت بین‌المللی</h3><p>انجام تراکنش‌های مالی خارجی با امنیت و دقت بالا.</p><ul class="list"><li>حواله بانکی (SWIFT)</li><li>انتقال از طریق IBAN</li><li>پرداخت با Mastercard / Visa</li><li>خدمات ارز دیجیتال (Crypto)</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="title">سرویس‌های محبوب بر اساس دسته‌بندی</h2>
+      <p class="text">برای مشاهده همه سرویس‌ها در دسته‌بندی‌های مختلف، کارت‌ها را به چپ و راست اسکرول کنید.</p>
+      <div class="service-categories">
+        <div class="service-scroll">
+          <article class="category-card">
+            <div class="category-head"><h3>🧠 هوش مصنوعی (AI Chat / LLM)</h3><span class="badge">AI</span></div>
+            <div class="category-main"><span class="main-item">ChatGPT</span><span class="main-item">Google Gemini</span><span class="main-item">Claude</span></div>
+            <p class="sub-title">مشابه‌ها:</p>
+            <ul class="sub-list"><li>Perplexity AI</li><li>Microsoft Copilot</li><li>Grok</li><li>DeepSeek</li><li>Mistral AI</li><li>Poe</li></ul>
+          </article>
+          <article class="category-card">
+            <div class="category-head"><h3>🌍 آموزش زبان</h3><span class="badge">Language</span></div>
+            <div class="category-main"><span class="main-item">Rosetta Stone</span><span class="main-item">Mondly</span></div>
+            <p class="sub-title">مشابه‌ها:</p>
+            <ul class="sub-list"><li>Duolingo</li><li>Babbel</li><li>Busuu</li><li>Elsa Speak</li></ul>
+          </article>
+          <article class="category-card">
+            <div class="category-head"><h3>☁️ سرور / VPS / هاستینگ</h3><span class="badge">Hosting</span></div>
+            <div class="category-main"><span class="main-item">Hetzner</span><span class="main-item">OVHcloud</span><span class="main-item">VPS 1 Dollar</span></div>
+            <p class="sub-title">مشابه‌ها:</p>
+            <ul class="sub-list"><li>DigitalOcean</li><li>Linode</li><li>Vultr</li><li>Contabo</li><li>AWS</li></ul>
+          </article>
+          <article class="category-card">
+            <div class="category-head"><h3>🛒 فروشگاه و مارکت‌پلیس</h3><span class="badge">Marketplace</span></div>
+            <div class="category-main"><span class="main-item">Amazon</span><span class="main-item">Alibaba</span><span class="main-item">Apple</span></div>
+            <p class="sub-title">مشابه‌ها:</p>
+            <ul class="sub-list"><li>eBay</li><li>AliExpress</li><li>JD.com</li><li>Walmart</li></ul>
+          </article>
+          <article class="category-card">
+            <div class="category-head"><h3>🌐 پروکسی / ابزار دور زدن</h3><span class="badge">Privacy</span></div>
+            <div class="category-main"><span class="main-item">Proxy Site</span></div>
+            <p class="sub-title">مشابه‌ها:</p>
+            <ul class="sub-list"><li>HideMyAss</li><li>KProxy</li><li>Proton VPN</li><li>Windscribe</li></ul>
+          </article>
+        </div>
+        <p class="scroll-hint">⇠ برای دیدن دسته‌های بیشتر، اسکرول کنید ⇢</p>
       </div>
     </section>
 
