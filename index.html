@@ -3,140 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="کافه‌نت | خدمات دیجیتال و مالی" />
   <title>کافه‌نت | خدمات دیجیتال و مالی</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&family=Sora:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
-    :root{--navy:#102b6b;--blue:#2563d8;--teal:#16b5b0;--bg:#edf3ff;--surface:#ffffff;--text:#1a2753;--muted:#5a6d9a;--line:#cfdbf6;--ok:#e9fbf7;--warn:#fff2d6;--radius:16px;--shadow:0 10px 28px rgba(16,43,107,.12)}
-    *{box-sizing:border-box;margin:0;padding:0} body{font-family:'Vazirmatn',sans-serif;background:var(--bg);color:var(--text)}
-    .container{width:min(1120px,94%);margin-inline:auto}
-    .header{position:sticky;top:0;z-index:40;background:linear-gradient(135deg,rgba(16,43,107,.94),rgba(22,181,176,.84));backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.2);overflow:hidden}
-    .header::before{content:"";position:absolute;inset:0;background:url('logo.png') center/clamp(280px,52vw,700px) no-repeat;opacity:.3;pointer-events:none}
-    .header-inner{min-height:132px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:#fff;font-family:'Sora',sans-serif;font-weight:700;position:relative;z-index:1}
-    .brand-mark{display:inline-flex;align-items:center;justify-content:center;width:clamp(76px,11vw,124px);height:clamp(76px,11vw,124px)}
-    .brand img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(0,0,0,.18))}.brand span{color:#b9fff7}
-    .brand-title{font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.1}
-    .hero{padding:1.6rem 0 1rem}.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:.9rem}
-    .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.1rem}
-    h1{font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.5;color:var(--navy);margin-bottom:.6rem}
-    .lead{font-size:.94rem;color:var(--muted);line-height:1.95}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.9rem}.btn{padding:.5rem 1rem;border-radius:999px;text-decoration:none;font-size:.84rem;font-weight:700}
-    .btn-primary{background:linear-gradient(135deg,var(--blue),var(--navy));color:#fff}.btn-secondary{border:1px solid var(--line);background:#fff;color:var(--navy)}
-    .trust-note{background:var(--ok);border:1px solid #caefe4;border-radius:12px;padding:.8rem;font-size:.8rem;line-height:1.9;color:#0f5e51}
-    .section{padding:.8rem 0}.title{font-size:1.2rem;color:var(--navy);margin-bottom:.6rem}
-    .text{font-size:.9rem;line-height:2;color:var(--muted)}
-    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-top:.6rem}
-    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.85rem}.card h3{font-size:.92rem;color:var(--navy);margin-bottom:.4rem}.card p{font-size:.8rem;line-height:1.85;color:var(--muted)}
-    .list{margin-top:.35rem;padding-right:1rem}.list li{font-size:.79rem;color:var(--muted);line-height:1.9}
-    .price{margin-top:.5rem;display:inline-block;background:var(--warn);padding:.32rem .6rem;border-radius:999px;font-size:.76rem;color:#7a5600;font-weight:700}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
-    .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem}.step{background:#fff;border:1px solid var(--line);padding:.7rem;border-radius:12px;font-size:.8rem;color:var(--navy);text-align:center}
-    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem}.stat{background:#fff;border:1px solid var(--line);padding:.75rem;border-radius:12px;text-align:center}.stat b{font-family:'Sora',sans-serif;color:var(--blue);font-size:1.1rem;display:block}
-    .channels{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.45rem}.chip{background:#fff;border:1px solid var(--line);padding:.38rem .7rem;border-radius:999px;font-size:.78rem;color:var(--navy)}
-    .service-categories{margin-top:.8rem;display:grid;gap:.6rem}
-    .service-scroll{display:flex;gap:.7rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.25rem}
-    .service-scroll::-webkit-scrollbar{height:8px}
-    .service-scroll::-webkit-scrollbar-thumb{background:#c9d5ef;border-radius:999px}
-    .category-card{min-width:min(315px,86vw);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:.9rem;box-shadow:var(--shadow)}
-    .category-head{display:flex;align-items:center;justify-content:space-between;gap:.4rem;margin-bottom:.45rem}
-    .category-head h3{font-size:.95rem;color:var(--navy)}
-    .badge{background:#eaf0ff;color:var(--blue);font-size:.72rem;padding:.22rem .55rem;border-radius:999px;font-weight:700}
-    .category-main{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.45rem}
-    .main-item{background:#f3f7ff;border:1px solid #dde7ff;color:var(--navy);font-size:.77rem;padding:.25rem .55rem;border-radius:999px}
-    .sub-title{font-size:.78rem;color:#7584a8;margin-bottom:.2rem}
-    .sub-list{margin:0;padding-right:1rem}
-    .sub-list li{font-size:.78rem;color:var(--muted);line-height:1.9}
-    .scroll-hint{font-size:.74rem;color:#8091b6;margin-top:.15rem}
-    footer{margin-top:.8rem;padding:1rem;border-top:1px solid var(--line);text-align:center;font-size:.77rem;color:#8a96b4}
-    @media (max-width:920px){.hero-grid,.cards,.split,.steps,.stats{grid-template-columns:1fr}}
+    :root {
+      --bg-primary:#0a0a0f;--bg-secondary:#0f0f1a;--bg-card:rgba(255,255,255,.04);--border:rgba(255,255,255,.08);
+      --accent-1:#6366f1;--accent-2:#8b5cf6;--accent-glow:rgba(99,102,241,.15);--text-primary:#f8fafc;
+      --text-secondary:#94a3b8;--text-muted:#475569;--success:#10b981;--warning:#f59e0b;--radius:20px;
+      --shadow:0 20px 50px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Vazirmatn","Inter",sans-serif;background:radial-gradient(circle at 85% 10%,#1a1a32 0%,var(--bg-primary) 35%),var(--bg-primary);color:var(--text-primary);text-align:right;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+    .container{inline-size:min(1200px,92%);margin-inline:auto}.section{padding:5.5rem 0;position:relative}
+    .nav{position:fixed;inset-block-start:0;inset-inline:0;z-index:1000;height:64px;background:rgba(10,10,15,.5);backdrop-filter:blur(20px);border-block-end:1px solid transparent;transition:.3s}
+    .nav.scrolled{background:rgba(10,10,15,.86);border-block-end-color:var(--border)}
+    .nav__inner{height:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+    .brand{justify-self:end;font-weight:800;font-size:1.1rem;letter-spacing:.2px}.brand span{color:var(--accent-1)}
+    .nav__links{display:flex;gap:1.4rem;justify-content:center}.nav__link{font-size:.95rem;color:var(--text-secondary)}.nav__link.active,.nav__link:hover{color:#fff}
+    .nav__cta{justify-self:start;padding:.55rem 1rem;border-radius:999px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));box-shadow:0 0 0 1px rgba(255,255,255,.12),0 10px 30px var(--accent-glow);font-size:.88rem}
+    .menu-btn{display:none;justify-self:start;background:none;border:none;color:#fff;font-size:1.4rem}
+    .mobile-menu{max-height:0;overflow:hidden;background:rgba(15,15,26,.97);transition:max-height .3s ease}.mobile-menu.open{max-height:320px}
+    .mobile-menu a{display:block;padding:1rem 4%;border-block-end:1px solid var(--border);color:var(--text-secondary)}
+    .hero{min-height:100svh;padding-top:96px;display:grid;align-items:center;position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:-20%;background:conic-gradient(from 70deg,#2b2b50,#111122,#2a1749,#111122);filter:blur(60px);animation:spin 16s linear infinite;opacity:.55}
+    .shape{position:absolute;border-radius:999px;filter:blur(20px);opacity:.3;animation:float 7s ease-in-out infinite}
+    .shape--1{inline-size:220px;block-size:220px;background:#6366f1;inset-inline-end:10%;inset-block-start:20%}
+    .shape--2{inline-size:150px;block-size:150px;background:#8b5cf6;inset-inline-start:12%;inset-block-end:20%;animation-delay:1.2s}
+    .hero__content{position:relative;z-index:2;max-width:860px}
+    .badge{display:inline-flex;gap:.4rem;align-items:center;padding:.45rem .9rem;border:1px solid rgba(99,102,241,.4);border-radius:999px;background:rgba(99,102,241,.12);font-size:.86rem}
+    h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.08;margin:.9rem 0;font-weight:800;letter-spacing:-.02em;background:linear-gradient(135deg,#fff 40%,#6366f1);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{max-width:760px;color:var(--text-secondary);font-size:1.03rem;line-height:1.75}
+    .hero__actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}.btn{padding:.82rem 1.35rem;border-radius:12px;font-weight:600;border:1px solid transparent;transition:.3s cubic-bezier(.4,0,.2,1)}
+    .btn--primary{background:linear-gradient(135deg,var(--accent-1),var(--accent-2));box-shadow:0 14px 35px var(--accent-glow)}.btn--ghost{background:rgba(255,255,255,.02);border-color:var(--border)}
+    .stats{display:flex;flex-wrap:wrap;gap:1.5rem;margin-top:2rem}.stat b{display:block;font-size:1.5rem}.stat span{color:var(--text-secondary);font-size:.9rem}
+    .scroll-indicator{margin-top:1.7rem;display:inline-block;color:var(--text-secondary);animation:bounce 1.8s infinite}
+    .label{display:inline-block;padding:.35rem .75rem;border:1px solid var(--border);border-radius:999px;font-size:.76rem;color:var(--text-secondary);letter-spacing:.12em}
+    .section h2{font-size:clamp(1.8rem,3vw,2.8rem);margin:.8rem 0 1rem}
+    .bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem}
+    .card{background:var(--bg-card);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem;box-shadow:var(--shadow);transition:.3s cubic-bezier(.4,0,.2,1)}
+    .card:hover{transform:translateY(-4px);border-color:rgba(99,102,241,.45);box-shadow:0 0 0 1px rgba(99,102,241,.15),0 24px 48px rgba(25,25,45,.7)}
+    .card h3{font-size:1.25rem;margin:.7rem 0}.card p,.card li{color:var(--text-secondary);line-height:1.9}
+    .card--lg{grid-column:span 8}.card--md{grid-column:span 4}.card--wide{grid-column:1/-1}
+    .pill{display:inline-block;padding:.25rem .6rem;border-radius:999px;background:rgba(245,158,11,.15);border:1px solid rgba(245,158,11,.35);font-size:.78rem;color:#ffd79a}
+    .payments{display:flex;gap:.45rem;flex-wrap:wrap}.payments span{font-size:.74rem;padding:.3rem .6rem;border:1px solid var(--border);border-radius:999px}
+    .swiper{padding:1rem .2rem 3rem}.swiper-slide .card{height:100%}.swiper-nav{display:flex;gap:.6rem;justify-content:flex-start}.sw-btn{inline-size:42px;block-size:42px;border:1px solid var(--border);background:var(--bg-card);color:#fff;border-radius:10px}
+    .features .item,.process .step{padding:1.2rem 0;border-block-end:1px solid var(--border)}
+    .item{display:grid;grid-template-columns:84px 1fr;gap:1rem;align-items:start}.item .n{font-size:2rem;font-weight:800;color:rgba(255,255,255,.2)}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;position:relative}.process-grid::before{content:"";position:absolute;inset-inline:8%;inset-block-start:28px;height:2px;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));opacity:.4}
+    .step{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1rem;position:relative}.step::before{content:attr(data-step);position:absolute;inset-inline-end:12px;inset-block-start:-16px;inline-size:34px;block-size:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#fff;border:1px solid var(--border)}
+    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.method{display:inline-flex;gap:.45rem;padding:.6rem .9rem;border:1px solid var(--border);border-radius:10px;margin-inline-end:.5rem}
+    input,textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--border);color:#fff;border-radius:12px;padding:.72rem .8rem;font-family:inherit}.field{margin-bottom:.7rem}.error{color:#fca5a5;font-size:.8rem;min-height:1.2em}
+    footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--text-muted)}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}
+    .reveal{opacity:0;transform:translateY(30px);transition:.6s}.reveal.visible{opacity:1;transform:none}
+    @keyframes spin{to{transform:rotate(1turn)}}@keyframes float{50%{transform:translateY(-16px)}}@keyframes bounce{50%{transform:translateY(8px)}}
+    @media (max-width:960px){.nav{height:56px}.nav__links,.nav__cta{display:none}.menu-btn{display:block}.nav__inner{grid-template-columns:1fr auto}
+      .card--lg,.card--md,.process-grid>*{grid-column:1/-1}.process-grid{grid-template-columns:1fr}.process-grid::before{display:none}.trust-row,.contact,.footer-grid{grid-template-columns:1fr}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
-  <header class="header"><div class="container header-inner"><a class="brand" href="#" aria-label="Kafenet"><span class="brand-mark"><img src="logo.png" alt="لوگوی کافه‌نت"/></span><strong class="brand-title">Kafe<span>net</span></strong></a></div></header>
-
-  <main class="container">
-    <section class="hero">
-      <div class="hero-grid">
-        <article class="panel">
-          <h1>خدمات دیجیتال و مالی</h1>
-          <p class="lead">ارائه VPS اقتصادی، خدمات کافه‌نت عمومی و تخصصی، توسعه نرم‌افزار و راهکارهای پرداخت بین‌المللی برای کاربران و کسب‌وکارها.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">شروع همکاری</a>
-            <a class="btn btn-secondary" href="#services">مشاهده خدمات</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section"><h2 class="title">معرفی کوتاه</h2><p class="text">ما مجموعه‌ای از خدمات دیجیتال و مالی را در یک بستر یکپارچه ارائه می‌دهیم؛ از اجرای امور تخصصی تا پروژه‌های تخصصی، زیرساخت سرور و انتقال بین‌المللی وجه. تمرکز ما بر سرعت، دقت و پشتیبانی واقعی است.</p></section>
-
-    <section class="section" id="services">
-      <h2 class="title">خدمات</h2>
-      <div class="cards">
-        <article class="card"><h3>خدمات کافی‌نت (عمومی و تخصصی)</h3><p>انجام پروژه‌های دانشجویی، ترجمه متون تخصصی، نگارش و ویرایش پایان‌نامه، تایپ و فرمت‌بندی حرفه‌ای.</p></article>
-        <article class="card"><h3>سرور مجازی (VPS)</h3><p>ارائه VPS پرسرعت و پایدار با قیمت اقتصادی، مناسب برای توسعه، ترید و اجرای سرویس‌ها.</p><span class="price">شروع قیمت: از 2.3 دلار در ماه</span><ul class="list"><li><a href="vps.html">مشاهده لندینگ اختصاصی VPS</a></li></ul></article>
-        <article class="card"><h3>برنامه‌نویسی و توسعه</h3><p>طراحی و توسعه وب‌سایت، سیستم‌های اختصاصی، API و اتوماسیون بر اساس نیاز شما.</p></article>
-      </div>
-      <div class="split" style="margin-top:.7rem">
-        <article class="card"><h3>پشتیبانی فنی</h3><p>مدیریت و نگهداری سرورها و سیستم‌ها.</p><ul class="list"><li>پشتیبانی ویندوز سرور</li><li>پشتیبانی لینوکس</li><li>رفع خطا و بهینه‌سازی سیستم‌ها</li></ul></article>
-        <article class="card"><h3>خدمات مالی و پرداخت بین‌المللی</h3><p>انجام تراکنش‌های مالی خارجی با امنیت و دقت بالا.</p><ul class="list"><li>حواله بانکی (SWIFT)</li><li>انتقال از طریق IBAN</li><li>پرداخت با Mastercard / Visa</li><li>خدمات ارز دیجیتال (Crypto)</li></ul></article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="title">سرویس‌های محبوب بر اساس دسته‌بندی</h2>
-      <p class="text">برای مشاهده همه سرویس‌ها در دسته‌بندی‌های مختلف، کارت‌ها را به چپ و راست اسکرول کنید.</p>
-      <div class="service-categories">
-        <div class="service-scroll">
-          <article class="category-card">
-            <div class="category-head"><h3>🧠 هوش مصنوعی (AI Chat / LLM)</h3><span class="badge">AI</span></div>
-            <div class="category-main"><span class="main-item">ChatGPT</span><span class="main-item">Google Gemini</span><span class="main-item">Claude</span></div>
-            <p class="sub-title">مشابه‌ها:</p>
-            <ul class="sub-list"><li>Perplexity AI</li><li>Microsoft Copilot</li><li>Grok</li><li>DeepSeek</li><li>Mistral AI</li><li>Poe</li></ul>
-          </article>
-          <article class="category-card">
-            <div class="category-head"><h3>🌍 آموزش زبان</h3><span class="badge">Language</span></div>
-            <div class="category-main"><span class="main-item">Rosetta Stone</span><span class="main-item">Mondly</span></div>
-            <p class="sub-title">مشابه‌ها:</p>
-            <ul class="sub-list"><li>Duolingo</li><li>Babbel</li><li>Busuu</li><li>Elsa Speak</li></ul>
-          </article>
-          <article class="category-card">
-            <div class="category-head"><h3>☁️ سرور / VPS / هاستینگ</h3><span class="badge">Hosting</span></div>
-            <div class="category-main"><span class="main-item">Hetzner</span><span class="main-item">OVHcloud</span><span class="main-item">VPS 1 Dollar</span></div>
-            <p class="sub-title">مشابه‌ها:</p>
-            <ul class="sub-list"><li>DigitalOcean</li><li>Linode</li><li>Vultr</li><li>Contabo</li><li>AWS</li></ul>
-          </article>
-          <article class="category-card">
-            <div class="category-head"><h3>🛒 فروشگاه و مارکت‌پلیس</h3><span class="badge">Marketplace</span></div>
-            <div class="category-main"><span class="main-item">Amazon</span><span class="main-item">Alibaba</span><span class="main-item">Apple</span></div>
-            <p class="sub-title">مشابه‌ها:</p>
-            <ul class="sub-list"><li>eBay</li><li>AliExpress</li><li>JD.com</li><li>Walmart</li></ul>
-          </article>
-          <article class="category-card">
-            <div class="category-head"><h3>🌐 پروکسی / ابزار دور زدن</h3><span class="badge">Privacy</span></div>
-            <div class="category-main"><span class="main-item">Proxy Site</span></div>
-            <p class="sub-title">مشابه‌ها:</p>
-            <ul class="sub-list"><li>HideMyAss</li><li>KProxy</li><li>Proton VPN</li><li>Windscribe</li></ul>
-          </article>
-        </div>
-        <p class="scroll-hint">⇠ برای دیدن دسته‌های بیشتر، اسکرول کنید ⇢</p>
-      </div>
-    </section>
-
-    <section class="section split">
-      <article><h2 class="title">چرا ما؟</h2><ul class="list"><li>ارائه چندین خدمت در یک پلتفرم</li><li>سرعت بالا در انجام درخواست‌ها</li><li>پشتیبانی پاسخ‌گو</li><li>قیمت‌گذاری رقابتی</li><li>تجربه عملی در پروژه‌های مختلف</li></ul></article>
-      <article><h2 class="title">روند کار</h2><div class="steps"><div class="step">1) انتخاب سرویس</div><div class="step">2) ثبت درخواست</div><div class="step">3) بررسی و اجرا</div><div class="step">4) تحویل و پشتیبانی</div></div></article>
-    </section>
-
-    <section class="section split">
-      <article><h2 class="title">اعتمادسازی</h2><p class="text">ما تلاش می‌کنیم خدمات را شفاف، دقیق و قابل پیگیری ارائه دهیم تا کاربران با اطمینان از سرویس‌ها استفاده کنند.</p><div class="stats" style="margin-top:.6rem"><div class="stat"><b>+420</b><span>تعداد مشتری</span></div><div class="stat"><b>+8</b><span>سال سابقه فعالیت</span></div><div class="stat"><b>+120</b><span>نمونه کار</span></div></div></article>
-      <article id="contact"><h2 class="title">تماس با ما</h2><p class="text">برای ثبت سفارش یا دریافت مشاوره، از طریق راه‌های ارتباطی با ما در تماس باشید.</p><div class="channels"><span class="chip">تلگرام</span><span class="chip">واتساپ</span><span class="chip">ایمیل / تیکت</span></div><div class="hero-actions" style="margin-top:.8rem"><a class="btn btn-primary" href="https://kafenet.com" target="_blank">شروع سفارش</a></div></article>
-    </section>
-
-    <section class="section panel"><h2 class="title">CTA نهایی</h2><p class="text">همین حالا سرویس مورد نظر خود را انتخاب کنید و در کوتاه‌ترین زمان دریافت کنید.</p></section>
+  <!-- ناوبری -->
+  <header class="nav" id="topNav"><div class="container nav__inner"><a class="brand" href="#">Kafe<span>net</span></a><nav class="nav__links"><a class="nav__link" href="#hero">خانه</a><a class="nav__link" href="#services">خدمات</a><a class="nav__link" href="#popular">دسته‌بندی</a><a class="nav__link" href="#contact">تماس</a></nav><a class="nav__cta" href="https://kafenet.com" target="_blank" rel="noopener">شروع سفارش</a><button class="menu-btn" id="menuBtn" aria-label="منو">☰</button></div><div class="mobile-menu" id="mobileMenu"><a href="#hero">خانه</a><a href="#services">خدمات</a><a href="#popular">دسته‌بندی</a><a href="#contact">تماس</a></div></header>
+  <main>
+    <!-- هیرو -->
+    <section class="hero" id="hero"><span class="shape shape--1"></span><span class="shape shape--2"></span><div class="container hero__content reveal"><span class="badge">⚡ خدمات دیجیتال حرفه‌ای</span><h1>خدمات دیجیتال و مالی<br>برای کاربران و کسب‌وکارها</h1><p class="lead">ارائه VPS اقتصادی، خدمات کافه‌نت عمومی و تخصصی، توسعه نرم‌افزار و راهکارهای پرداخت بین‌المللی برای کاربران و کسب‌وکارها.</p><div class="hero__actions"><a class="btn btn--primary" href="#contact">شروع همکاری</a><a class="btn btn--ghost" href="#services">مشاهده خدمات</a></div><div class="stats"><div class="stat"><b data-count="420">۰</b><span>مشتری+</span></div><div class="stat"><b data-count="8">۰</b><span>سال تجربه+</span></div><div class="stat"><b data-count="120">۰</b><span>پروژه+</span></div></div><span class="scroll-indicator">⌄</span></div></section>
+    <!-- خدمات -->
+    <section class="section" id="services"><div class="container"><span class="label">خدمات ما</span><h2>خدمات</h2><div class="bento"><article class="card card--lg reveal"><span class="pill">ویژه</span><h3>سرور مجازی (VPS)</h3><p>ارائه VPS پرسرعت و پایدار با قیمت اقتصادی، مناسب برای توسعه، ترید و اجرای سرویس‌ها.</p><p class="pill" style="margin-top:.4rem">شروع قیمت: از 2.3 دلار در ماه</p><p style="margin-top:.6rem"><a href="vps.html">مشاهده لندینگ اختصاصی VPS</a></p></article><article class="card card--md reveal"><h3>خدمات کافی‌نت (عمومی و تخصصی)</h3><p>انجام پروژه‌های دانشجویی، ترجمه متون تخصصی، نگارش و ویرایش پایان‌نامه، تایپ و فرمت‌بندی حرفه‌ای.</p></article><article class="card card--md reveal"><h3>برنامه‌نویسی و توسعه</h3><p>طراحی و توسعه وب‌سایت، سیستم‌های اختصاصی، API و اتوماسیون بر اساس نیاز شما.</p></article><article class="card card--md reveal"><h3>پشتیبانی فنی</h3><ul><li>مدیریت و نگهداری سرورها و سیستم‌ها.</li><li>پشتیبانی ویندوز سرور</li><li>پشتیبانی لینوکس</li><li>رفع خطا و بهینه‌سازی سیستم‌ها</li></ul></article><article class="card card--wide reveal"><h3>خدمات مالی و پرداخت بین‌المللی</h3><p>انجام تراکنش‌های مالی خارجی با امنیت و دقت بالا.</p><div class="payments"><span>SWIFT</span><span>IBAN</span><span>Visa</span><span>Mastercard</span><span>Crypto</span></div></article></div></div></section>
+    <section class="section" id="popular"><div class="container"><h2>سرویس‌های محبوب بر اساس دسته‌بندی</h2><p class="lead">برای مشاهده همه سرویس‌ها در دسته‌بندی‌های مختلف، کارت‌ها را به چپ و راست اسکرول کنید.</p><div class="swiper-nav"><button class="sw-btn" id="prevBtn">→</button><button class="sw-btn" id="nextBtn">←</button></div><div class="swiper" id="popularSwiper"><div class="swiper-wrapper"><div class="swiper-slide"><article class="card"><h3>🧠 هوش مصنوعی (AI Chat / LLM)</h3><p>ChatGPT • Google Gemini • Claude</p><p>Perplexity AI • Microsoft Copilot • Grok • DeepSeek • Mistral AI • Poe</p></article></div><div class="swiper-slide"><article class="card"><h3>🌍 آموزش زبان</h3><p>Rosetta Stone • Mondly</p><p>Duolingo • Babbel • Busuu • Elsa Speak</p></article></div><div class="swiper-slide"><article class="card"><h3>☁️ سرور / VPS / هاستینگ</h3><p>Hetzner • OVHcloud • VPS 1 Dollar</p><p>DigitalOcean • Linode • Vultr • Contabo • AWS</p></article></div><div class="swiper-slide"><article class="card"><h3>🛒 فروشگاه و مارکت‌پلیس</h3><p>Amazon • Alibaba • Apple</p><p>eBay • AliExpress • JD.com • Walmart</p></article></div><div class="swiper-slide"><article class="card"><h3>🌐 پروکسی / ابزار دور زدن</h3><p>Proxy Site</p><p>HideMyAss • KProxy • Proton VPN • Windscribe</p></article></div></div></div></div></section>
+    <section class="section features"><div class="container"><h2>چرا ما؟</h2><div class="item reveal"><div class="n">۰۱</div><div><h3>ارائه چندین خدمت در یک پلتفرم</h3></div></div><div class="item reveal"><div class="n">۰۲</div><div><h3>سرعت بالا در انجام درخواست‌ها</h3></div></div><div class="item reveal"><div class="n">۰۳</div><div><h3>پشتیبانی پاسخ‌گو</h3></div></div><div class="item reveal"><div class="n">۰۴</div><div><h3>قیمت‌گذاری رقابتی</h3></div></div><div class="item reveal"><div class="n">۰۵</div><div><h3>تجربه عملی در پروژه‌های مختلف</h3></div></div></div></section>
+    <section class="section process"><div class="container"><h2>روند کار</h2><div class="process-grid"><article class="step" data-step="۱">انتخاب سرویس</article><article class="step" data-step="۲">ثبت درخواست</article><article class="step" data-step="۳">بررسی و اجرا</article><article class="step" data-step="۴">تحویل و پشتیبانی</article></div></div></section>
+    <section class="section"><div class="container"><div class="trust-row"><article class="card"><h3 data-count="420">۰+</h3><p>تعداد مشتری</p></article><article class="card"><h3 data-count="8">۰+</h3><p>سال سابقه فعالیت</p></article><article class="card"><h3 data-count="120">۰+</h3><p>نمونه کار</p></article></div><p class="lead" style="margin-top:1rem">ما تلاش می‌کنیم خدمات را شفاف، دقیق و قابل پیگیری ارائه دهیم تا کاربران با اطمینان از سرویس‌ها استفاده کنند.</p></div></section>
+    <section class="section" id="contact"><div class="container contact"><article class="card"><h2>تماس با ما</h2><p class="lead">برای ثبت سفارش یا دریافت مشاوره، از طریق راه‌های ارتباطی با ما در تماس باشید.</p><a class="method" href="https://t.me" target="_blank" rel="noopener">تلگرام</a><a class="method" href="https://wa.me" target="_blank" rel="noopener">واتساپ</a><a class="method" href="mailto:info@kafenet.com" target="_blank" rel="noopener">ایمیل / تیکت</a></article><article class="card"><form id="contactForm" novalidate><div class="field"><input name="name" placeholder="نام" /><div class="error"></div></div><div class="field"><input name="contact" placeholder="شماره/ایمیل" /><div class="error"></div></div><div class="field"><textarea name="desc" rows="5" placeholder="توضیح درخواست"></textarea><div class="error"></div></div><button class="btn btn--primary" type="submit" style="width:100%">ارسال درخواست</button></form></article></div></section>
   </main>
-
-  <footer>© ۱۴۰۵ Kafenet — خدمات دیجیتال و مالی</footer>
+  <footer><div class="container footer-grid"><div><h3>Kafe<span style="color:var(--accent-1)">net</span></h3><p>ما مجموعه‌ای از خدمات دیجیتال و مالی را در یک بستر یکپارچه ارائه می‌دهیم؛ از اجرای امور تخصصی تا پروژه‌های تخصصی، زیرساخت سرور و انتقال بین‌المللی وجه. تمرکز ما بر سرعت، دقت و پشتیبانی واقعی است.</p></div><div><h4>لینک‌ها</h4><p><a href="#services">خدمات</a></p><p><a href="#popular">دسته‌بندی</a></p><p><a href="#contact">تماس</a></p></div><div><h4>ارتباط</h4><p>تلگرام</p><p>واتساپ</p><p>ایمیل / تیکت</p></div></div><div class="container" style="margin-top:1rem;border-top:1px solid var(--border);padding-top:1rem">© ۱۴۰۵ Kafenet — خدمات دیجیتال و مالی | ساخته شده با ❤️ توسط Kafenet</div></footer>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    (() => {
+      const toFa = n => n.toString().replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+      const nav = document.getElementById('topNav');
+      window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>80));
+      const menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');
+      menuBtn?.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
+      const observer=new IntersectionObserver((entries)=>entries.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')),{threshold:.15});
+      document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+      const countObserver=new IntersectionObserver((entries)=>entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;const end=+el.dataset.count;let i=0;const t=setInterval(()=>{i++;el.textContent=toFa(i)+(el.tagName==='H3'?'+':'');if(i>=end)clearInterval(t)},16);countObserver.unobserve(el)}),{threshold:.4});
+      document.querySelectorAll('[data-count]').forEach(el=>countObserver.observe(el));
+      const links=[...document.querySelectorAll('.nav__link')],sections=links.map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
+      const sectionObserver=new IntersectionObserver((ents)=>ents.forEach(ent=>{if(ent.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+ent.target.id));}}),{rootMargin:'-45% 0px -45% 0px'});
+      sections.forEach(s=>sectionObserver.observe(s));
+      document.addEventListener('DOMContentLoaded',()=>{
+        const sw=new Swiper('#popularSwiper',{slidesPerView:1,spaceBetween:16,autoplay:{delay:4000,disableOnInteraction:false,pauseOnMouseEnter:true},breakpoints:{640:{slidesPerView:2},1024:{slidesPerView:3}}});
+        document.getElementById('nextBtn').addEventListener('click',()=>sw.slideNext());
+        document.getElementById('prevBtn').addEventListener('click',()=>sw.slidePrev());
+      });
+      document.getElementById('contactForm')?.addEventListener('submit',(e)=>{e.preventDefault();const f=e.currentTarget;let ok=true;[['name','لطفاً نام را وارد کنید.'],['contact','شماره یا ایمیل را وارد کنید.'],['desc','توضیح درخواست را بنویسید.']].forEach(([n,msg])=>{const input=f.querySelector(`[name="${n}"]`);const err=input.nextElementSibling;err.textContent=input.value.trim()?"":msg;if(!input.value.trim())ok=false;});if(ok){const btn=f.querySelector('button');btn.disabled=true;btn.textContent='در حال ارسال...';setTimeout(()=>{btn.disabled=false;btn.textContent='ارسال درخواست';f.reset();},1200);}});
+    })();
+  </script>
 </body>
 </html>
