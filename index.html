@@ -13,7 +13,9 @@
     .header{position:sticky;top:0;z-index:40;background:rgba(244,247,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
     .header-inner{min-height:74px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--navy);font-family:'Sora',sans-serif;font-weight:700}
-    .brand img{width:48px;height:48px;object-fit:contain}.brand span{color:var(--teal)}
+    .brand-mark{display:inline-flex;align-items:center;justify-content:center;width:clamp(46px,7vw,72px);height:clamp(46px,7vw,72px);padding:.25rem;border-radius:14px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 20px rgba(13,31,79,.08)}
+    .brand img{width:100%;height:100%;object-fit:contain}.brand span{color:var(--teal)}
+    .brand-title{font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.1}
     .hero{padding:1.6rem 0 1rem}.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:.9rem}
     .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.1rem}
     h1{font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.5;color:var(--navy);margin-bottom:.6rem}
@@ -50,7 +52,7 @@
   </style>
 </head>
 <body>
-  <header class="header"><div class="container header-inner"><a class="brand" href="#"><img src="IMG_20260503_224106_148.jpg" alt="لوگو"/>Kafe<span>net</span></a></div></header>
+  <header class="header"><div class="container header-inner"><a class="brand" href="#" aria-label="Kafenet"><span class="brand-mark"><img src="logo.png" alt="لوگوی کافه‌نت"/></span><strong class="brand-title">Kafe<span>net</span></strong></a></div></header>
 
   <main class="container">
     <section class="hero">
@@ -63,7 +65,6 @@
             <a class="btn btn-secondary" href="#services">مشاهده خدمات</a>
           </div>
         </article>
-        <aside class="panel trust-note">برای جبران ریسک بی‌اعتمادی در ترکیب خدمات مالی + پروژه‌های تخصصی + VPS، شفافیت در شرح خدمات، فرآیند اجرایی و نحوه پیگیری سفارش را در تمام بخش‌ها حفظ کرده‌ایم.</aside>
       </div>
     </section>
 
