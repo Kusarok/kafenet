@@ -2,613 +2,85 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kafenet — Data Center & Networks</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>کافه‌نت | خدمات دیجیتال و مالی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&family=Sora:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy:   #0f2457;
-      --blue:   #1a3c8f;
-      --mid:    #2557cc;
-      --teal:   #19c9b0;
-      --light:  #f0f4fb;
-      --white:  #ffffff;
-      --dark:   #1a1f2e;
-      --gray:   #6b7a99;
-      --card-bg:#ffffff;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Vazirmatn', 'Sora', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      overflow-x: hidden;
-    }
-
-    /* ── GEOMETRIC SVG BACKGROUND ── */
-    .bg-pattern {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      opacity: .45;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 10%, #c8d8ff55 0%, transparent 70%),
-                  radial-gradient(ellipse 50% 40% at 80% 80%, #19c9b022 0%, transparent 60%);
-      z-index: 0;
-    }
-
-    .hero > * { position: relative; z-index: 1; }
-
-    .hero-logo {
-      width: 120px; height: 120px;
-      object-fit: contain;
-      filter: drop-shadow(0 8px 32px #1a3c8f30);
-      animation: floatLogo 5s ease-in-out infinite;
-    }
-
-    @keyframes floatLogo {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-10px); }
-    }
-
-    .hero-brand {
-      margin-top: 1.2rem;
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(2.6rem, 7vw, 5rem);
-      font-weight: 700;
-      letter-spacing: -.02em;
-      color: var(--navy);
-      line-height: 1;
-    }
-    .hero-brand span { color: var(--teal); }
-
-    .hero-sub {
-      margin-top: .5rem;
-      font-family: 'Sora', sans-serif;
-      font-size: .9rem;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: var(--gray);
-      font-weight: 400;
-    }
-
-    .divider {
-      width: 50px; height: 3px;
-      background: linear-gradient(90deg, var(--teal), var(--mid));
-      border-radius: 99px;
-      margin: 1.8rem auto;
-    }
-
-    .hero-tagline {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: var(--gray);
-      max-width: 520px;
-      line-height: 1.9;
-      font-weight: 300;
-    }
-
-    .hero-cta {
-      margin-top: 2.2rem;
-      display: inline-flex; align-items: center; gap: .6rem;
-      background: linear-gradient(135deg, var(--blue), var(--mid));
-      color: #fff;
-      text-decoration: none;
-      padding: .85rem 2.2rem;
-      border-radius: 50px;
-      font-size: .95rem;
-      font-weight: 600;
-      letter-spacing: .03em;
-      box-shadow: 0 8px 28px #1a3c8f35;
-      transition: transform .25s, box-shadow .25s;
-    }
-    .hero-cta:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 40px #1a3c8f45;
-    }
-    .hero-cta svg { flex-shrink: 0; }
-
-    .scroll-hint {
-      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: .4rem;
-      color: var(--gray); font-size: .75rem; letter-spacing: .1em;
-      animation: fadeInUp .8s 1.2s both;
-    }
-    .scroll-hint .dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--teal);
-      animation: bounce 1.6s ease-in-out infinite;
-    }
-    @keyframes bounce { 0%,100%{transform:translateY(0)}50%{transform:translateY(6px)} }
-
-    /* ── SECTIONS ── */
-    section { position: relative; z-index: 1; }
-
-    .section-label {
-      text-align: center;
-      font-family: 'Sora', sans-serif;
-      font-size: .75rem;
-      letter-spacing: .35em;
-      text-transform: uppercase;
-      color: var(--teal);
-      font-weight: 600;
-      margin-bottom: .6rem;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: .5rem;
-      line-height: 1.3;
-    }
-
-    .section-desc {
-      text-align: center;
-      color: var(--gray);
-      font-size: .95rem;
-      line-height: 1.9;
-      max-width: 500px;
-      margin: 0 auto 3.5rem;
-      font-weight: 300;
-    }
-
-    /* ── SERVICES ── */
-    .services {
-      padding: 6rem 2rem;
-      background: var(--white);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 1.5rem;
-      max-width: 1050px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1.5px solid #e4eaf7;
-      border-radius: 20px;
-      padding: 2.4rem 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: transform .3s, box-shadow .3s, border-color .3s;
-      cursor: default;
-    }
-
-    .card::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, #e8f0ff18 0%, transparent 60%);
-      opacity: 0; transition: opacity .3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px #1a3c8f12;
-      border-color: #b5c9f7;
-    }
-    .card:hover::after { opacity: 1; }
-
-    .card-icon {
-      width: 54px; height: 54px;
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.4rem;
-      font-size: 1.5rem;
-    }
-
-    .card-icon.blue  { background: #e8efff; }
-    .card-icon.teal  { background: #e0faf7; }
-    .card-icon.gold  { background: #fff6e0; }
-
-    .card-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: .6rem;
-    }
-
-    .card-desc {
-      font-size: .88rem;
-      color: var(--gray);
-      line-height: 1.85;
-      font-weight: 300;
-    }
-
-    .card-tags {
-      display: flex; flex-wrap: wrap; gap: .4rem;
-      margin-top: 1.2rem;
-    }
-
-    .tag {
-      font-size: .7rem;
-      font-family: 'Sora', sans-serif;
-      font-weight: 600;
-      letter-spacing: .05em;
-      padding: .28rem .7rem;
-      border-radius: 99px;
-      background: #eef2ff;
-      color: var(--blue);
-    }
-    .tag.teal-tag { background: #e0faf7; color: #0fa894; }
-    .tag.gold-tag { background: #fff6e0; color: #c08b00; }
-
-    /* ── FINANCE BLOCK ── */
-    .finance {
-      padding: 6rem 2rem;
-      background: var(--light);
-    }
-
-    .payment-cards {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .pay-chip {
-      display: flex; align-items: center; gap: .75rem;
-      background: var(--white);
-      border: 1.5px solid #e4eaf7;
-      border-radius: 14px;
-      padding: 1rem 1.6rem;
-      font-weight: 600;
-      font-size: .92rem;
-      color: var(--navy);
-      transition: transform .25s, box-shadow .25s, border-color .25s;
-      min-width: 160px;
-    }
-    .pay-chip:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px #1a3c8f14;
-      border-color: #b5c9f7;
-    }
-
-    .pay-chip .chip-icon {
-      width: 36px; height: 36px; border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0;
-    }
-
-    /* ── STATS ── */
-    .stats {
-      padding: 5rem 2rem;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-      text-align: center;
-    }
-
-    .stats-grid {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 3rem;
-      max-width: 800px; margin: 0 auto;
-    }
-
-    .stat-item {}
-    .stat-num {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      color: var(--teal);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: .85rem;
-      color: #a0b3d6;
-      margin-top: .4rem;
-      font-weight: 300;
-    }
-
-    /* ── CONTACT ── */
-    .contact {
-      padding: 6rem 2rem;
-      background: var(--white);
-      text-align: center;
-    }
-
-    .contact-box {
-      display: inline-flex; flex-direction: column; align-items: center; gap: 1rem;
-      background: var(--light);
-      border: 1.5px solid #e4eaf7;
-      border-radius: 24px;
-      padding: 3rem 3.5rem;
-      max-width: 480px;
-      width: 100%;
-    }
-
-    .contact-url {
-      font-family: 'Sora', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--navy);
-      text-decoration: none;
-      letter-spacing: -.01em;
-    }
-    .contact-url span { color: var(--teal); }
-    .contact-url:hover { opacity: .8; }
-
-    .contact-note {
-      font-size: .85rem;
-      color: var(--gray);
-      font-weight: 300;
-      line-height: 1.8;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: .78rem;
-      color: #aab4cc;
-      border-top: 1px solid #e8edf8;
-      font-family: 'Sora', sans-serif;
-    }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .fade-up.visible {
-      opacity: 1; transform: translateY(0);
-    }
+    :root{--navy:#0d1f4f;--blue:#1f4fb3;--teal:#11b69d;--bg:#f4f7ff;--surface:#fff;--text:#1d2235;--muted:#5f6d8d;--line:#dce4f4;--ok:#e9fff7;--warn:#fff5df;--radius:16px;--shadow:0 10px 28px rgba(11,29,82,.08)}
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:'Vazirmatn',sans-serif;background:var(--bg);color:var(--text)}
+    .container{width:min(1120px,94%);margin-inline:auto}
+    .header{position:sticky;top:0;z-index:40;background:rgba(244,247,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    .header-inner{min-height:74px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--navy);font-family:'Sora',sans-serif;font-weight:700}
+    .brand img{width:48px;height:48px;object-fit:contain}.brand span{color:var(--teal)}
+    .hero{padding:1.6rem 0 1rem}.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:.9rem}
+    .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.1rem}
+    h1{font-size:clamp(1.5rem,3.4vw,2.2rem);line-height:1.5;color:var(--navy);margin-bottom:.6rem}
+    .lead{font-size:.94rem;color:var(--muted);line-height:1.95}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:.9rem}.btn{padding:.5rem 1rem;border-radius:999px;text-decoration:none;font-size:.84rem;font-weight:700}
+    .btn-primary{background:linear-gradient(135deg,var(--blue),var(--navy));color:#fff}.btn-secondary{border:1px solid var(--line);background:#fff;color:var(--navy)}
+    .trust-note{background:var(--ok);border:1px solid #caefe4;border-radius:12px;padding:.8rem;font-size:.8rem;line-height:1.9;color:#0f5e51}
+    .section{padding:.8rem 0}.title{font-size:1.2rem;color:var(--navy);margin-bottom:.6rem}
+    .text{font-size:.9rem;line-height:2;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-top:.6rem}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:.85rem}.card h3{font-size:.92rem;color:var(--navy);margin-bottom:.4rem}.card p{font-size:.8rem;line-height:1.85;color:var(--muted)}
+    .list{margin-top:.35rem;padding-right:1rem}.list li{font-size:.79rem;color:var(--muted);line-height:1.9}
+    .price{margin-top:.5rem;display:inline-block;background:var(--warn);padding:.32rem .6rem;border-radius:999px;font-size:.76rem;color:#7a5600;font-weight:700}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+    .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem}.step{background:#fff;border:1px solid var(--line);padding:.7rem;border-radius:12px;font-size:.8rem;color:var(--navy);text-align:center}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem}.stat{background:#fff;border:1px solid var(--line);padding:.75rem;border-radius:12px;text-align:center}.stat b{font-family:'Sora',sans-serif;color:var(--blue);font-size:1.1rem;display:block}
+    .channels{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.45rem}.chip{background:#fff;border:1px solid var(--line);padding:.38rem .7rem;border-radius:999px;font-size:.78rem;color:var(--navy)}
+    footer{margin-top:.8rem;padding:1rem;border-top:1px solid var(--line);text-align:center;font-size:.77rem;color:#8a96b4}
+    @media (max-width:920px){.hero-grid,.cards,.split,.steps,.stats{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
+  <header class="header"><div class="container header-inner"><a class="brand" href="#"><img src="IMG_20260503_224106_148.jpg" alt="لوگو"/>Kafe<span>net</span></a></div></header>
 
-<!-- SVG geometric background -->
-<svg class="bg-pattern" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-  <g stroke="#1a3c8f" stroke-width=".6" fill="none" opacity=".35">
-    <line x1="0" y1="200" x2="300" y2="0"/>
-    <line x1="300" y1="0" x2="500" y2="300"/>
-    <line x1="500" y1="300" x2="200" y2="500"/>
-    <line x1="200" y1="500" x2="0" y2="200"/>
-    <line x1="300" y1="0" x2="200" y2="500"/>
-    <line x1="0" y1="200" x2="500" y2="300"/>
-
-    <line x1="1100" y1="0" x2="1440" y2="180"/>
-    <line x1="1440" y1="180" x2="1300" y2="450"/>
-    <line x1="1300" y1="450" x2="1100" y2="0"/>
-    <line x1="1440" y1="180" x2="1100" y2="300"/>
-    <line x1="1100" y1="300" x2="1300" y2="450"/>
-
-    <line x1="600" y1="700" x2="900" y2="600"/>
-    <line x1="900" y1="600" x2="1050" y2="850"/>
-    <line x1="1050" y1="850" x2="700" y2="900"/>
-    <line x1="700" y1="900" x2="600" y2="700"/>
-    <line x1="900" y1="600" x2="700" y2="900"/>
-
-    <circle cx="300" cy="0" r="3" fill="#1a3c8f" stroke="none"/>
-    <circle cx="500" cy="300" r="3" fill="#1a3c8f" stroke="none"/>
-    <circle cx="200" cy="500" r="3" fill="#1a3c8f" stroke="none"/>
-    <circle cx="0" cy="200" r="2" fill="#1a3c8f" stroke="none"/>
-    <circle cx="1100" cy="0" r="3" fill="#1a3c8f" stroke="none"/>
-    <circle cx="1440" cy="180" r="3" fill="#1a3c8f" stroke="none"/>
-    <circle cx="1300" cy="450" r="3" fill="#1a3c8f" stroke="none"/>
-    <circle cx="900" cy="600" r="3" fill="#19c9b0" stroke="none"/>
-    <circle cx="700" cy="900" r="3" fill="#19c9b0" stroke="none"/>
-  </g>
-</svg>
-
-<!-- ══ HERO ══ -->
-<div class="hero">
-  <img src="1000130449.jpg" alt="Kafenet Logo" class="hero-logo" onerror="this.style.display='none'"/>
-
-  <div class="hero-brand">Kafe<span>net</span></div>
-  <div class="hero-sub">Data Center &amp; Networks</div>
-
-  <div class="divider"></div>
-
-  <p class="hero-tagline">
-    زیرساخت دیجیتال شما را طراحی، توسعه و مدیریت می‌کنیم —<br>
-    از کد تا حواله، از ایده تا اجرا.
-  </p>
-
-  <a href="https://kafenet.com" class="hero-cta" target="_blank">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-    kafenet.com
-  </a>
-
-  <div class="scroll-hint">
-    <span>بیشتر بدانید</span>
-    <div class="dot"></div>
-  </div>
-</div>
-
-
-<!-- ══ SERVICES ══ -->
-<section class="services">
-  <p class="section-label fade-up">خدمات ما</p>
-  <h2 class="section-title fade-up">آنچه برای شما انجام می‌دهیم</h2>
-  <p class="section-desc fade-up">از ساخت محصول دیجیتال تا مدیریت تراکنش‌های مالی بین‌المللی، همه‌چیز زیر یک سقف.</p>
-
-  <div class="services-grid">
-
-    <div class="card fade-up">
-      <div class="card-icon blue">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2557cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <article class="panel">
+          <h1>خدمات دیجیتال و مالی</h1>
+          <p class="lead">ارائه VPS اقتصادی، خدمات کافه‌نت عمومی و تخصصی، توسعه نرم‌افزار و راهکارهای پرداخت بین‌المللی برای کاربران و کسب‌وکارها.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">شروع همکاری</a>
+            <a class="btn btn-secondary" href="#services">مشاهده خدمات</a>
+          </div>
+        </article>
+        <aside class="panel trust-note">برای جبران ریسک بی‌اعتمادی در ترکیب خدمات مالی + پروژه‌های تخصصی + VPS، شفافیت در شرح خدمات، فرآیند اجرایی و نحوه پیگیری سفارش را در تمام بخش‌ها حفظ کرده‌ایم.</aside>
       </div>
-      <div class="card-title">برنامه‌نویسی و توسعه نرم‌افزار</div>
-      <div class="card-desc">
-        توسعه اپلیکیشن‌های وب و موبایل، API، سیستم‌های باکند، اتوماسیون فرآیندها و راه‌حل‌های سفارشی برای کسب‌وکارهای مختلف.
+    </section>
+
+    <section class="section"><h2 class="title">معرفی کوتاه</h2><p class="text">ما مجموعه‌ای از خدمات دیجیتال و مالی را در یک بستر یکپارچه ارائه می‌دهیم؛ از اجرای امور تخصصی تا پروژه‌های تخصصی، زیرساخت سرور و انتقال بین‌المللی وجه. تمرکز ما بر سرعت، دقت و پشتیبانی واقعی است.</p></section>
+
+    <section class="section" id="services">
+      <h2 class="title">خدمات</h2>
+      <div class="cards">
+        <article class="card"><h3>خدمات کافی‌نت (عمومی و تخصصی)</h3><p>انجام پروژه‌های دانشجویی، ترجمه متون تخصصی، نگارش و ویرایش پایان‌نامه، تایپ و فرمت‌بندی حرفه‌ای.</p></article>
+        <article class="card"><h3>سرور مجازی (VPS)</h3><p>ارائه VPS پرسرعت و پایدار با قیمت اقتصادی، مناسب برای توسعه، ترید و اجرای سرویس‌ها.</p><span class="price">شروع قیمت: از 2.3 دلار در ماه</span><ul class="list"><li><a href="vps.html">مشاهده لندینگ اختصاصی VPS</a></li></ul></article>
+        <article class="card"><h3>برنامه‌نویسی و توسعه</h3><p>طراحی و توسعه وب‌سایت، سیستم‌های اختصاصی، API و اتوماسیون بر اساس نیاز شما.</p></article>
       </div>
-      <div class="card-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Node.js</span>
-        <span class="tag">REST API</span>
-        <span class="tag">Cloud</span>
+      <div class="split" style="margin-top:.7rem">
+        <article class="card"><h3>پشتیبانی فنی</h3><p>مدیریت و نگهداری سرورها و سیستم‌ها.</p><ul class="list"><li>پشتیبانی ویندوز سرور</li><li>پشتیبانی لینوکس</li><li>رفع خطا و بهینه‌سازی سیستم‌ها</li></ul></article>
+        <article class="card"><h3>خدمات مالی و پرداخت بین‌المللی</h3><p>انجام تراکنش‌های مالی خارجی با امنیت و دقت بالا.</p><ul class="list"><li>حواله بانکی (SWIFT)</li><li>انتقال از طریق IBAN</li><li>پرداخت با Mastercard / Visa</li><li>خدمات ارز دیجیتال (Crypto)</li></ul></article>
       </div>
-    </div>
+    </section>
 
-    <div class="card fade-up">
-      <div class="card-icon blue">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2557cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      </div>
-      <div class="card-title">طراحی و راه‌اندازی وب‌سایت</div>
-      <div class="card-desc">
-        طراحی UI/UX حرفه‌ای، ساخت وب‌سایت شرکتی، فروشگاه اینترنتی و لندینگ‌پیج با تمرکز بر تجربه کاربری و سرعت بارگذاری.
-      </div>
-      <div class="card-tags">
-        <span class="tag">UI / UX</span>
-        <span class="tag">WordPress</span>
-        <span class="tag">React</span>
-        <span class="tag">SEO</span>
-      </div>
-    </div>
+    <section class="section split">
+      <article><h2 class="title">چرا ما؟</h2><ul class="list"><li>ارائه چندین خدمت در یک پلتفرم</li><li>سرعت بالا در انجام درخواست‌ها</li><li>پشتیبانی پاسخ‌گو</li><li>قیمت‌گذاری رقابتی</li><li>تجربه عملی در پروژه‌های مختلف</li></ul></article>
+      <article><h2 class="title">روند کار</h2><div class="steps"><div class="step">1) انتخاب سرویس</div><div class="step">2) ثبت درخواست</div><div class="step">3) بررسی و اجرا</div><div class="step">4) تحویل و پشتیبانی</div></div></article>
+    </section>
 
-    <div class="card fade-up">
-      <div class="card-icon teal">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0fa894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-      </div>
-      <div class="card-title">خدمات حواله و تراکنش بین‌المللی</div>
-      <div class="card-desc">
-        ارسال و دریافت حواله ارزی، انتقال وجه با IBAN و SWIFT، و پرداخت‌های بین‌المللی با Mastercard و Visa — سریع، امن و مطمئن.
-      </div>
-      <div class="card-tags">
-        <span class="tag teal-tag">IBAN</span>
-        <span class="tag teal-tag">SWIFT</span>
-        <span class="tag teal-tag">Mastercard</span>
-        <span class="tag teal-tag">Visa</span>
-      </div>
-    </div>
+    <section class="section split">
+      <article><h2 class="title">اعتمادسازی</h2><p class="text">ما تلاش می‌کنیم خدمات را شفاف، دقیق و قابل پیگیری ارائه دهیم تا کاربران با اطمینان از سرویس‌ها استفاده کنند.</p><div class="stats" style="margin-top:.6rem"><div class="stat"><b>+420</b><span>تعداد مشتری</span></div><div class="stat"><b>+8</b><span>سال سابقه فعالیت</span></div><div class="stat"><b>+120</b><span>نمونه کار</span></div></div></article>
+      <article id="contact"><h2 class="title">تماس با ما</h2><p class="text">برای ثبت سفارش یا دریافت مشاوره، از طریق راه‌های ارتباطی با ما در تماس باشید.</p><div class="channels"><span class="chip">تلگرام</span><span class="chip">واتساپ</span><span class="chip">ایمیل / تیکت</span></div><div class="hero-actions" style="margin-top:.8rem"><a class="btn btn-primary" href="https://kafenet.com" target="_blank">شروع سفارش</a></div></article>
+    </section>
 
-  </div>
-</section>
+    <section class="section panel"><h2 class="title">CTA نهایی</h2><p class="text">همین حالا سرویس مورد نظر خود را انتخاب کنید و در کوتاه‌ترین زمان دریافت کنید.</p></section>
+  </main>
 
-
-<!-- ══ PAYMENT METHODS ══ -->
-<section class="finance">
-  <p class="section-label fade-up">روش‌های پرداخت</p>
-  <h2 class="section-title fade-up">حواله و انتقال وجه بین‌المللی</h2>
-  <p class="section-desc fade-up">با پشتیبانی از استانداردهای جهانی، تراکنش‌های مالی شما را به هر نقطه از جهان مدیریت می‌کنیم.</p>
-
-  <div class="payment-cards">
-
-    <div class="pay-chip fade-up">
-      <div class="chip-icon" style="background:#e8efff;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2557cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      </div>
-      <span>IBAN Transfer</span>
-    </div>
-
-    <div class="pay-chip fade-up">
-      <div class="chip-icon" style="background:#e0faf7;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0fa894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-      </div>
-      <span>SWIFT Wire</span>
-    </div>
-
-    <div class="pay-chip fade-up">
-      <div class="chip-icon" style="background:#fff0e0;">
-        <svg width="22" height="16" viewBox="0 0 50 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="50" height="32" rx="5" fill="#EB001B"/>
-          <rect x="20" width="10" height="32" fill="#FF5F00"/>
-          <rect x="30" width="20" height="32" rx="5" fill="#F79E1B"/>
-        </svg>
-      </div>
-      <span>Mastercard</span>
-    </div>
-
-    <div class="pay-chip fade-up">
-      <div class="chip-icon" style="background:#eef2ff;">
-        <svg width="40" height="14" viewBox="0 0 78 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M28 24L33 1H41L36 24H28Z" fill="#1A1F71"/>
-          <path d="M55 1.5C53.3 0.9 50.7 0 47.4 0C39.5 0 33.9 4.1 33.9 9.9C33.9 14.1 37.8 16.5 40.8 17.9C43.9 19.3 44.9 20.3 44.9 21.6C44.9 23.6 42.4 24.5 40.1 24.5C36.9 24.5 35.2 24 32.5 22.9L31.4 22.4L30.2 29.2C32.3 30.1 36.1 30.9 40.1 31C48.5 31 53.9 26.9 53.9 20.7C53.9 17.2 51.7 14.5 47 12.3C44.3 11 42.7 10 42.7 8.6C42.7 7.4 44.1 6 47.1 6C49.6 6 51.4 6.5 52.8 7.1L53.5 7.4L55 1.5Z" fill="#1A1F71"/>
-          <path d="M65 1H58.7C56.8 1 55.3 1.5 54.5 3.4L43 24H51.4L53 19.8H63L63.9 24H71L65 1ZM55 14C55.6 12.4 58 6 58 6C57.9 6.1 58.7 4 59.2 3L59.8 5.6C59.8 5.6 61.6 13.2 62 14H55Z" fill="#1A1F71"/>
-          <path d="M21 1L13.1 16.8L12.3 12.9C10.8 8.1 6.2 2.9 1 0.5L8.2 24H16.7L29.5 1H21Z" fill="#1A1F71"/>
-          <path d="M5.9 1H-6L-6.1 1.6C2.8 3.7 8.9 8.5 11 15L8.8 3.5C8.4 1.6 7 1.1 5.9 1Z" fill="#F9A533"/>
-        </svg>
-      </div>
-      <span>Visa Card</span>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ══ STATS ══ -->
-<section class="stats">
-  <div class="stats-grid">
-    <div class="stat-item fade-up">
-      <div class="stat-num">+۵۰۰</div>
-      <div class="stat-label">پروژه موفق</div>
-    </div>
-    <div class="stat-item fade-up">
-      <div class="stat-num">۲۴/۷</div>
-      <div class="stat-label">پشتیبانی آنلاین</div>
-    </div>
-    <div class="stat-item fade-up">
-      <div class="stat-num">+۱۰</div>
-      <div class="stat-label">سال تجربه</div>
-    </div>
-    <div class="stat-item fade-up">
-      <div class="stat-num">۱۰۰٪</div>
-      <div class="stat-label">تعهد به کیفیت</div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══ CONTACT ══ -->
-<section class="contact">
-  <p class="section-label fade-up">ارتباط با ما</p>
-  <h2 class="section-title fade-up">آماده همکاری هستیم</h2>
-  <p class="section-desc fade-up">برای مشاوره رایگان، ارسال درخواست یا کسب اطلاعات بیشتر با ما در تماس باشید.</p>
-
-  <div class="contact-box fade-up">
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2557cc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-    <a href="https://kafenet.com" target="_blank" class="contact-url">kafenet<span>.com</span></a>
-    <p class="contact-note">برای مشاوره، سفارش پروژه یا استعلام قیمت<br>از طریق سایت با تیم ما در ارتباط باشید.</p>
-    <a href="https://kafenet.com" class="hero-cta" target="_blank" style="margin-top:.4rem; font-size:.85rem; padding:.7rem 1.8rem;">
-      ورود به سایت ←
-    </a>
-  </div>
-</section>
-
-
-<footer>
-  © ۱۴۰۴ Kafenet — Data Center &amp; Networks · kafenet.com
-</footer>
-
-
-<script>
-  // Intersection Observer for fade-up animations
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
+  <footer>© ۱۴۰۵ Kafenet — خدمات دیجیتال و مالی</footer>
 </body>
 </html>
