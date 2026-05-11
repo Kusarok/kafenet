@@ -30,7 +30,10 @@
     
     .main-swiper {width:100vw;height:100vh;padding-top:76px;box-sizing:border-box;}
     .main-swiper > .swiper-wrapper {align-items:center;}
-    .swiper-slide {height:calc(100vh - 100px);max-height:100%;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;border-radius:32px;background:rgba(255,253,248,.6);box-shadow: 0 4px 30px rgba(0,0,0,0.03);border:1px solid var(--line);overflow:hidden;}
+    .swiper-slide {height:calc(100vh - 100px);max-height:100%;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;border-radius:32px;background:linear-gradient(135deg, rgba(255,253,248,0.95) 0%, rgba(255,255,255,0.8) 100%);backdrop-filter:blur(16px);box-shadow: 0 24px 60px rgba(15,76,92,0.08), inset 0 1px 0 rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.6);overflow:hidden;}
+    .main-nav-btn{color:var(--brand);background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);width:56px;height:56px;border-radius:50%;box-shadow:0 8px 32px rgba(15,76,92,0.15);border:1px solid var(--line);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
+    .main-nav-btn:hover{background:var(--brand);color:#fff;transform:scale(1.15);}
+    .main-nav-btn::after{font-size:22px;font-weight:900;}
     .swiper-slide-content {overflow-y:auto;max-height:100%;padding:2rem 0;scrollbar-width:none;}
     .swiper-slide-content::-webkit-scrollbar {display:none;}
     
@@ -70,6 +73,9 @@
   <header class="nav" id="topNav"><div class="container nav__inner"><a class="brand" href="#hero"><img class="brand__logo" src="logo.png" alt="لوگوی کافه‌نت" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" /><span class="brand__fallback">ک</span><span class="brand__copy"><strong>Kafe<span>net</span></strong><small>همراه دیجیتال شما</small></span></a></div></header>
   
   <div class="swiper main-swiper" dir="rtl">
+    <!-- فلش‌های راهنمای کاربر -->
+    <div class="swiper-button-next main-nav-btn"></div>
+    <div class="swiper-button-prev main-nav-btn"></div>
     <div class="swiper-wrapper">
       
       <!-- هیرو -->
@@ -175,19 +181,31 @@
         // Main Full-screen Gallery Swiper
         const mainSwiper = new Swiper('.main-swiper', {
             direction: 'horizontal',
-            slidesPerView: 1.1,
+            effect: 'coverflow',
+            coverflowEffect: {
+              rotate: 0,
+              stretch: -20,
+              depth: 120,
+              modifier: 1.2,
+              slideShadows: false,
+            },
+            slidesPerView: 1.15,
             centeredSlides: true,
-            spaceBetween: 16,
             mousewheel: {
-              sensitivity: 1,
+              sensitivity: 0.4,
               releaseOnEdges: true,
-              forceToAxis: true
+              forceToAxis: true,
+              thresholdDelta: 20
             },
             keyboard: {
               enabled: true,
               onlyInViewport: false
             },
-            speed: 600,
+            navigation: {
+              nextEl: '.swiper-button-next.main-nav-btn',
+              prevEl: '.swiper-button-prev.main-nav-btn',
+            },
+            speed: 800,
         });
       });
     })();
