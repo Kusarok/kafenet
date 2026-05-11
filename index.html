@@ -5,77 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="کافه‌نت؛ همراه صمیمی شما برای خدمات دیجیتال، مالی، سرور و کارهای تخصصی آنلاین" />
   <title>کافه‌نت | خدمات دیجیتال، مالی و تخصصی با همراهی واقعی</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <style>
-    :root {
-      --bg:#f8f4eb;--bg-soft:#fffaf1;--surface:#fffdf8;--surface-strong:#ffffff;--ink:#17252a;
-      --text:#27363b;--muted:#68777d;--line:#eadfce;--brand:#0f4c5c;--brand-2:#1f7a8c;
-      --accent:#d49a3a;--accent-soft:#fff0d2;--mint:#e9f6f4;--danger:#c95151;--radius:24px;
-      --shadow:0 22px 60px rgba(64,44,18,.12);
-    }
-    *{box-sizing:border-box}html,body{height:100%;overflow:hidden;margin:0;padding:0;}
-    body{font-family:"Vazirmatn","Inter",sans-serif;background:linear-gradient(180deg,#fffaf1 0%,var(--bg) 42%,#ffffff 100%);color:var(--text);text-align:right;}
-    body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 82% 8%,rgba(212,154,58,.18),transparent 28%),radial-gradient(circle at 12% 18%,rgba(31,122,140,.12),transparent 24%)}
-    a{color:inherit;text-decoration:none}img{max-width:100%;display:block}p{margin:0}.container{inline-size:min(1180px,92%);margin-inline:auto}
-    .section{padding:5.5rem 0;position:relative}
-    .nav{position:fixed;inset-block-start:0;inset-inline:0;z-index:1000;height:86px;border-block-end:1px solid rgba(255,255,255,0.2);box-shadow:0 10px 40px rgba(0,0,0,0.2);overflow:hidden;}
-    .nav__bg{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(24px) brightness(0.4) saturate(1.5);z-index:-1;}
-    .nav__inner{height:100%;display:flex;justify-content:center;align-items:center;}
-    .brand{display:inline-flex;align-items:center;gap:1rem;font-weight:900;color:#ffffff;text-shadow:0 4px 16px rgba(0,0,0,0.6);transition:transform 0.3s;}
-    .brand:hover{transform:scale(1.05);}
-    .brand__logo{inline-size:60px;block-size:60px;border-radius:16px;object-fit:contain;background:rgba(255,255,255,0.95);border:2px solid rgba(255,255,255,0.3);padding:.25rem;box-shadow:0 8px 24px rgba(0,0,0,0.4)}
-    .brand__copy{display:flex;align-items:center;gap:.3rem;font-size:1.7rem;letter-spacing:1px;}.brand__copy small{display:none;}.brand span{color:#e9f6f4;text-shadow:0 0 10px rgba(255,255,255,0.4);}
-    
-    .main-swiper {width:100vw;height:100vh;padding-top:86px;box-sizing:border-box;}
-    .main-swiper > .swiper-wrapper {align-items:center;}
-    .swiper-slide {height:calc(100vh - 110px);max-height:100%;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box;border-radius:32px;background:linear-gradient(135deg, rgba(255,253,248,0.95) 0%, rgba(255,255,255,0.8) 100%);backdrop-filter:blur(16px);box-shadow: 0 24px 60px rgba(15,76,92,0.08), inset 0 1px 0 rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.6);overflow:hidden;}
-    .main-nav-btn{color:var(--brand);background:rgba(255,255,255,0.85);backdrop-filter:blur(8px);width:56px;height:56px;border-radius:50%;box-shadow:0 8px 32px rgba(15,76,92,0.15);border:1px solid var(--line);transition:all 0.3s cubic-bezier(0.4,0,0.2,1);}
-    .main-nav-btn:hover{background:var(--brand);color:#fff;transform:scale(1.15);}
-    .main-nav-btn::after{font-size:22px;font-weight:900;}
-    .swiper-slide-content {overflow-y:auto;max-height:100%;padding:2rem 0;scrollbar-width:none;}
-    .swiper-slide-content::-webkit-scrollbar {display:none;}
-    
-    .hero{display:grid;align-items:center;position:relative;overflow:hidden}
-    .shape{position:absolute;border-radius:999px;filter:blur(8px);opacity:.55;animation:float 7s ease-in-out infinite;z-index:-1}
-    .shape--1{inline-size:260px;block-size:260px;background:var(--mint);inset-inline-end:7%;inset-block-start:18%}
-    .shape--2{inline-size:190px;block-size:190px;background:var(--accent-soft);inset-inline-start:9%;inset-block-end:16%;animation-delay:1.2s}
-    .hero__grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);gap:2rem;align-items:center}
-    .hero__content{max-width:760px}.badge{display:inline-flex;gap:.45rem;align-items:center;padding:.5rem .95rem;border:1px solid rgba(15,76,92,.16);border-radius:999px;background:rgba(255,255,255,.72);color:var(--brand);font-size:.86rem;font-weight:700}
-    h1{font-size:clamp(2.45rem,5.7vw,4.9rem);line-height:1.12;margin:1rem 0;font-weight:800;letter-spacing:-.025em;color:var(--ink)}
-    h1 span{color:var(--brand)}.lead{max-width:760px;color:var(--muted);font-size:1.05rem;line-height:2}
-    .hero__actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.9rem 1.35rem;border-radius:16px;font-weight:700;border:1px solid transparent;transition:.3s cubic-bezier(.4,0,.2,1)}
-    .btn:hover{transform:translateY(-2px)}.btn--primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:0 18px 38px rgba(15,76,92,.2)}.btn--ghost{background:rgba(255,255,255,.7);border-color:var(--line);color:var(--brand)}
-    .hero-card{background:rgba(255,253,248,.86);border:1px solid var(--line);border-radius:32px;padding:1.35rem;box-shadow:var(--shadow)}
-    .hero-card__top{display:flex;align-items:center;gap:.85rem;margin-bottom:1rem}.hero-card__top img{inline-size:96px;block-size:54px;border-radius:20px;object-fit:contain;background:#fff;border:1px solid var(--line);padding:.12rem}.hero-card__top b{display:block;color:var(--ink);font-size:1.08rem}.hero-card__top span{color:var(--muted);font-size:.88rem}
-    .hero-card ul{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}.hero-card li{display:flex;gap:.55rem;align-items:flex-start;color:var(--text);line-height:1.8}.hero-card li::before{content:"✓";flex:0 0 24px;inline-size:24px;block-size:24px;display:grid;place-items:center;border-radius:50%;background:var(--mint);color:var(--brand);font-weight:800}
-    .stats{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}.stat{min-width:145px;padding:1rem;background:rgba(255,255,255,.64);border:1px solid var(--line);border-radius:20px}.stat b{display:block;font-size:1.5rem;color:var(--brand)}.stat span{color:var(--muted);font-size:.9rem}
-    .scroll-indicator{margin-top:1.7rem;display:inline-block;color:var(--muted);animation:bounce 1.8s infinite}.label{display:inline-block;padding:.38rem .78rem;border:1px solid rgba(15,76,92,.16);border-radius:999px;font-size:.78rem;color:var(--brand);background:var(--mint);font-weight:700}
-    .section h2{font-size:clamp(1.8rem,3vw,2.85rem);margin:.8rem 0 1rem;color:var(--ink);line-height:1.35}.section-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}.section-head .lead{max-width:560px}
-    .bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem}.card{background:rgba(255,253,248,.9);border:1px solid var(--line);border-radius:var(--radius);padding:1.35rem;box-shadow:0 14px 36px rgba(64,44,18,.07);transition:.3s cubic-bezier(.4,0,.2,1)}
-    .card:hover{transform:translateY(-4px);border-color:rgba(15,76,92,.25);box-shadow:var(--shadow)}.card h3{font-size:1.25rem;margin:.7rem 0;color:var(--ink)}.card p,.card li{color:var(--muted);line-height:1.95}.card--lg{grid-column:span 8}.card--md{grid-column:span 4}.card--wide{grid-column:1/-1}
-    .pill{display:inline-block;padding:.32rem .7rem;border-radius:999px;background:var(--accent-soft);border:1px solid rgba(212,154,58,.32);font-size:.8rem;color:#8a5a12;font-weight:700}.payments{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.9rem}.payments span{font-size:.78rem;padding:.38rem .7rem;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--brand);font-weight:700}
-    #popularSwiper{padding:1rem .2rem 3rem;direction:rtl}.swiper-nav{display:flex;gap:.6rem;justify-content:flex-start;margin-bottom: 1rem;}.sw-btn{inline-size:44px;block-size:44px;border:1px solid var(--line);background:#fff;color:var(--brand);border-radius:14px;font-size:1rem;cursor:pointer;}
-    .features .item{padding:1.25rem 0;border-block-end:1px solid var(--line)}.item{display:grid;grid-template-columns:84px 1fr;gap:1rem;align-items:start}.item .n{font-size:2rem;font-weight:800;color:rgba(15,76,92,.16)}.item p{color:var(--muted);line-height:1.9}
-    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;position:relative}.process-grid::before{content:"";position:absolute;inset-inline:8%;inset-block-start:28px;height:2px;background:linear-gradient(90deg,var(--brand),var(--accent));opacity:.25}
-    .step{background:rgba(255,253,248,.92);border:1px solid var(--line);border-radius:18px;padding:1.6rem 1rem 1rem;position:relative;color:var(--muted);line-height:1.8}.step strong{display:block;color:var(--ink);margin-bottom:.35rem}.step::before{content:attr(data-step);position:absolute;inset-inline-start:12px;inset-block-start:-16px;inline-size:38px;block-size:38px;border-radius:50%;display:grid;place-items:center;background:var(--brand);color:#fff;border:4px solid var(--bg-soft);font-weight:800}
-    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.contact{display:grid;grid-template-columns:1fr;gap:1rem}.method{display:inline-flex;gap:.45rem;padding:.65rem .9rem;border:1px solid var(--line);border-radius:14px;margin:.4rem 0 0 .5rem;background:#fff;color:var(--brand);font-weight:700}.quiet-list{margin:1rem 0 0;padding:0;list-style:none;display:grid;gap:.55rem}.quiet-list li{color:var(--muted);line-height:1.9}
-    footer{border-top:1px solid var(--line);padding:2.4rem 0;color:var(--muted);background:rgba(255,253,248,.68);border-radius:24px;margin-top:2rem;}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}.footer-brand{display:flex;align-items:center;gap:.7rem;color:var(--ink)}.footer-brand img{inline-size:92px;block-size:52px;border-radius:16px;object-fit:contain;background:#fff;border:1px solid var(--line);padding:.12rem}
-    @keyframes float{50%{transform:translateY(-16px)}}@keyframes bounce{50%{transform:translateY(8px)}}
-    @media (max-width:960px){.brand__logo{inline-size:82px;block-size:48px}.hero__grid{grid-template-columns:1fr}.hero-card{order:-1}
-      .card--lg,.card--md,.process-grid>*{grid-column:1/-1}.process-grid{grid-template-columns:1fr}.process-grid::before{display:none}.trust-row,.contact,.footer-grid{grid-template-columns:1fr}.section-head{display:block}}
-    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-  </style>
 </head>
 <body>
   <!-- ناوبری -->
   <header class="nav" id="topNav">
-    <div class="nav__bg" style="background-image: url('logo.png');"></div>
+    <div class="nav__bg" style="background-image: url('/public/logo.png');"></div>
     <div class="container nav__inner">
       <a class="brand" href="#hero">
-        <img class="brand__logo" src="logo.png" alt="لوگوی کافه‌نت" />
+        <img class="brand__logo" src="/public/logo.png" alt="لوگوی کافه‌نت" />
         <span class="brand__copy"><strong>Kafe<span>net</span></strong></span>
       </a>
     </div>
@@ -100,7 +37,7 @@
               <div class="stats"><div class="stat"><b data-count="420">۰</b><span>مشتری همراه</span></div><div class="stat"><b data-count="8">۰</b><span>سال تجربه عملی</span></div><div class="stat"><b data-count="120">۰</b><span>درخواست انجام‌شده</span></div></div>
             </div>
             <aside class="hero-card">
-              <div class="hero-card__top"><img src="logo.png" alt="لوگوی کافه‌نت" onerror="this.style.display='none'" /><div><b>«کافه‌نت»؛ با همان حس آشنا، اما مرتب‌تر، حرفه‌ای‌تر و مطمئن‌تر.</b><span>یک نقطه تماس برای چندین نیاز دیجیتال</span></div></div>
+              <div class="hero-card__top"><img src="/public/logo.png" alt="لوگوی کافه‌نت" onerror="this.style.display='none'" /><div><b>«کافه‌نت»؛ با همان حس آشنا، اما مرتب‌تر، حرفه‌ای‌تر و مطمئن‌تر.</b><span>یک نقطه تماس برای چندین نیاز دیجیتال</span></div></div>
               <ul><li>قبل از شروع، مسیر انجام کار و هزینه را شفاف توضیح می‌دهیم.</li><li>درخواست‌ها را مرحله‌به‌مرحله پیگیری می‌کنیم، نه با پاسخ‌های مبهم.</li><li>لحن ما رسمیِ خشک نیست؛ محترمانه، صمیمی و دقیق کنار شما هستیم.</li></ul>
             </aside>
           </div>
@@ -112,12 +49,8 @@
         <div class="swiper-slide-content swiper-no-swiping">
           <div class="container">
             <div class="section-head"><div><span class="label">خدمات ما</span><h2>برای وقتی که می‌خواهید کارتان درست و بی‌دردسر انجام شود</h2></div><p class="lead">هر خدمت با توضیح ساده، زمان‌بندی قابل فهم و پیگیری واقعی ارائه می‌شود؛ همان چیزی که از یک تیم حرفه‌ای انتظار دارید.</p></div>
-            <div class="bento">
-              <article class="card card--wide"><span class="pill">پرطرفدار</span><h3>پرداخت و خدمات مالی بین‌المللی</h3><p>برای خریدها و پرداخت‌های خارجی، با دقت در جزئیات و توضیح شفاف ریسک‌ها و هزینه‌ها همراهتان هستیم.</p><p>می‌خواهید برای عزیزانتان پول انتقال دهید یا دریافت کنید؟ ما کنار شما هستیم تا مسیر امن‌تر، شفاف‌تر و قابل پیگیری باشد.</p><p class="pill" style="margin-top:.7rem">کارمزد: فقط 2 دلار برای تمام خدمات این بخش</p><div class="payments"><span>SWIFT</span><span>IBAN</span><span>Visa</span><span>Mastercard</span><span>Crypto</span></div></article>
-              <article class="card card--lg"><span class="pill">پرطرفدار</span><h3>سرور مجازی (VPS)</h3><p>VPS پایدار و اقتصادی برای توسعه، ترید، اجرای ابزارها و سرویس‌های سبک. قبل از خرید، منابع، محدودیت‌ها و مناسب بودن سرویس برای کار شما روشن می‌شود.</p><p class="pill" style="margin-top:.7rem">شروع قیمت: از 2.3 دلار در ماه</p><p style="margin-top:.8rem"><a href="vps.html" style="color:var(--brand);text-decoration:underline;">مشاهده صفحه اختصاصی VPS</a></p></article>
-              <article class="card card--md"><h3>خدمات کافی‌نت عمومی و تخصصی</h3><p>ثبت‌نام‌ها، فرم‌ها، امور دانشجویی، ترجمه، تایپ و فرمت‌بندی را با دقت انجام می‌دهیم و تا پایان کار کنار شما می‌مانیم.</p></article>
-              <article class="card card--md"><h3>برنامه‌نویسی و توسعه</h3><p>طراحی سایت، سیستم اختصاصی، API و اتوماسیون برای کسب‌وکارهایی که راه‌حل تمیز و قابل نگهداری می‌خواهند.</p></article>
-              <article class="card card--md"><h3>پشتیبانی فنی</h3><ul><li>بررسی و نگهداری سرورها و سیستم‌ها</li><li>پشتیبانی ویندوز سرور و لینوکس</li><li>رفع خطا، بهینه‌سازی و مستندسازی کار انجام‌شده</li></ul></article>
+            <div id="services-container" class="bento">
+              <!-- Services injected here by JS -->
             </div>
           </div>
         </div>
@@ -129,13 +62,11 @@
           <div class="container">
             <div class="section-head"><div><span class="label">سرویس‌های محبوب</span><h2>خدمات پرطرفدار ما</h2></div><p class="lead">مطمئن نیستید از کجا شروع کنید؟ فقط نیازتان را بگویید تا بهترین مسیر را به شما پیشنهاد دهیم.</p></div>
             <div class="swiper-nav"><button class="sw-btn" id="prevBtn" aria-label="قبلی">→</button><button class="sw-btn" id="nextBtn" aria-label="بعدی">←</button></div>
-            <div class="swiper" id="popularSwiper" dir="rtl"><div class="swiper-wrapper">
-              <div class="swiper-slide"><article class="card" style="height:100%;"><h3>هوش مصنوعی و ابزارهای کاری</h3><p>تهیه، تمدید یا راهنمایی استفاده از ابزارهایی مثل ChatGPT، Gemini، Claude، Copilot و سرویس‌های مشابه.</p></article></div>
-              <div class="swiper-slide"><article class="card" style="height:100%;"><h3>آموزش زبان و اکانت‌های آموزشی</h3><p>کمک برای دسترسی به سرویس‌های آموزشی و زبان، با توضیح ساده درباره شرایط هر سرویس.</p></article></div>
-              <div class="swiper-slide"><article class="card" style="height:100%;"><h3>سرور، VPS و هاستینگ</h3><p>انتخاب سرویس مناسب از ارائه‌دهندگان مختلف، راه‌اندازی اولیه و تحویل قابل استفاده.</p></article></div>
-              <div class="swiper-slide"><article class="card" style="height:100%;"><h3>پرداخت و خرید ارزی</h3><p>از هر کجای دنیا که می‌خواهید خرید کنید؛ ما با شفافیت کامل در تمام مسیر کنارتان هستیم.</p></article></div>
-              <div class="swiper-slide"><article class="card" style="height:100%;"><h3>ابزارهای دسترسی و اتصال</h3><p>بررسی نیاز شما و پیشنهاد راهکار مناسب برای اتصال پایدارتر و امن‌تر.</p></article></div>
-            </div></div>
+            <div class="swiper" id="popularSwiper" dir="rtl">
+              <div class="swiper-wrapper" id="popular-wrapper">
+                <!-- Popular Services injected here by JS -->
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -161,63 +92,13 @@
             <article class="card"><span class="label">شروع گفتگو</span><h2>شما نیازتان را بگویید، پیدا کردن بهترین راه‌حل با ما.</h2><p class="lead">برای ثبت سفارش یا گرفتن مشاوره، از راه‌های زیر با ما در ارتباط باشید. اگر موضوع پیچیده باشد، مرحله‌به‌مرحله سؤال می‌پرسیم تا دقیق جلو برویم.</p><a class="method" href="https://t.me/H0_0M" target="_blank" rel="noopener">تلگرام: @H0_0M</a><a class="method" href="tel:+989055445651">تماس: +989055445651</a><a class="method" href="mailto:kusarok@gmail.com">ایمیل: kusarok@gmail.com</a><ul class="quiet-list"><li>پاسخ‌ها واضح و قابل پیگیری هستند.</li><li>قبل از پرداخت، محدوده کار و هزینه اعلام می‌شود.</li><li>برای کارهای فنی، تحویل با توضیح کوتاه همراه است.</li></ul></article>
           </div>
           <div class="container"><div class="trust-row" style="margin-top:1.5rem;"><article class="card"><h3 data-count="420">۰+</h3><p>مشتری همراه</p></article><article class="card"><h3 data-count="8">۰+</h3><p>سال تجربه</p></article><article class="card"><h3 data-count="120">۰+</h3><p>درخواست انجام‌شده</p></article></div></div>
-          <footer><div class="container footer-grid"><div><h3 class="footer-brand"><img src="logo.png" alt="لوگوی کافه‌نت" onerror="this.style.display='none'" /><span>Kafe<span style="color:var(--brand)">net</span></span></h3><p>کافه‌نت برای انجام خدمات دیجیتال، مالی و فنی با زبانی روشن و رفتاری قابل اعتماد ساخته شده است.</p></div><div><h4>لینک‌ها</h4><p><button onclick="document.querySelector('.main-swiper').swiper.slideTo(1)" style="background:none;border:none;color:inherit;cursor:pointer;padding:0;font:inherit;">خدمات</button></p><p><button onclick="document.querySelector('.main-swiper').swiper.slideTo(2)" style="background:none;border:none;color:inherit;cursor:pointer;padding:0;font:inherit;">سرویس‌ها</button></p></div><div><h4>ارتباط</h4><p><a href="https://t.me/H0_0M" target="_blank" rel="noopener">تلگرام</a></p><p><a href="tel:+989055445651">تماس</a></p><p><a href="mailto:kusarok@gmail.com">ایمیل</a></p></div></div><div class="container" style="margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem">© ۱۴۰۵ Kafenet — خدمات دیجیتال و مالی با همراهی واقعی</div></footer>
+          <footer><div class="container footer-grid"><div><h3 class="footer-brand"><img src="/public/logo.png" alt="لوگوی کافه‌نت" onerror="this.style.display='none'" /><span>Kafe<span style="color:var(--brand)">net</span></span></h3><p>کافه‌نت برای انجام خدمات دیجیتال، مالی و فنی با زبانی روشن و رفتاری قابل اعتماد ساخته شده است.</p></div><div><h4>لینک‌ها</h4><p><button onclick="document.querySelector('.main-swiper').swiper.slideTo(1)" style="background:none;border:none;color:inherit;cursor:pointer;padding:0;font:inherit;">خدمات</button></p><p><button onclick="document.querySelector('.main-swiper').swiper.slideTo(2)" style="background:none;border:none;color:inherit;cursor:pointer;padding:0;font:inherit;">سرویس‌ها</button></p></div><div><h4>ارتباط</h4><p><a href="https://t.me/H0_0M" target="_blank" rel="noopener">تلگرام</a></p><p><a href="tel:+989055445651">تماس</a></p><p><a href="mailto:kusarok@gmail.com">ایمیل</a></p></div></div><div class="container" style="margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem">© ۱۴۰۵ Kafenet — خدمات دیجیتال و مالی با همراهی واقعی</div></footer>
         </div>
       </section>
 
     </div>
   </div>
 
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    (() => {
-      const toFa = n => n.toString().replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
-      
-      const countObserver=new IntersectionObserver((entries)=>entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;const end=+el.dataset.count;let i=0;const t=setInterval(()=>{i++;el.textContent=toFa(i)+(el.tagName==='H3'?'+':'');if(i>=end)clearInterval(t)},16);countObserver.unobserve(el)}),{threshold:.4});
-      document.querySelectorAll('[data-count]').forEach(el=>countObserver.observe(el));
-      
-      document.addEventListener('DOMContentLoaded',()=>{
-        // Inner Swiper for popular services
-        const sw=new Swiper('#popularSwiper',{
-            slidesPerView:1,
-            spaceBetween:16,
-            nested: true,
-            breakpoints:{640:{slidesPerView:2},1024:{slidesPerView:3}}
-        });
-        document.getElementById('nextBtn').addEventListener('click',()=>sw.slideNext());
-        document.getElementById('prevBtn').addEventListener('click',()=>sw.slidePrev());
-
-        // Main Full-screen Gallery Swiper
-        const mainSwiper = new Swiper('.main-swiper', {
-            direction: 'horizontal',
-            effect: 'coverflow',
-            coverflowEffect: {
-              rotate: 0,
-              stretch: -20,
-              depth: 120,
-              modifier: 1.2,
-              slideShadows: false,
-            },
-            slidesPerView: 1.15,
-            centeredSlides: true,
-            mousewheel: {
-              sensitivity: 0.4,
-              releaseOnEdges: true,
-              forceToAxis: true,
-              thresholdDelta: 20
-            },
-            keyboard: {
-              enabled: true,
-              onlyInViewport: false
-            },
-            navigation: {
-              nextEl: '.swiper-button-next.main-nav-btn',
-              prevEl: '.swiper-button-prev.main-nav-btn',
-            },
-            speed: 800,
-        });
-      });
-    })();
-  </script>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
