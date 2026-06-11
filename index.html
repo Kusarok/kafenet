@@ -1,105 +1,745 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="کافه‌نت؛ همراه صمیمی شما برای خدمات دیجیتال، مالی، سرور و کارهای تخصصی آنلاین" />
-  <title>کافه‌نت | خدمات دیجیتال، مالی و تخصصی با همراهی واقعی</title>
+  <meta name="description" content="Kafenet is building AI-assisted market intelligence for financial analysts through structured market data analysis, signal evaluation, and predictive research." />
+  <title>Kafenet | AI-assisted market intelligence</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg:#f8f4eb;--bg-soft:#fffaf1;--surface:#fffdf8;--surface-strong:#ffffff;--ink:#17252a;
-      --text:#27363b;--muted:#68777d;--line:#eadfce;--brand:#0f4c5c;--brand-2:#1f7a8c;
-      --accent:#d49a3a;--accent-soft:#fff0d2;--mint:#e9f6f4;--danger:#c95151;--radius:24px;
-      --shadow:0 22px 60px rgba(64,44,18,.12);
+      --bg: #ffffff;
+      --bg-soft: #f6f8fb;
+      --surface: #ffffff;
+      --surface-muted: #f9fafb;
+      --ink: #142033;
+      --text: #344054;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --line-strong: #d0d5dd;
+      --brand: #1d4f75;
+      --brand-soft: #e8f1f7;
+      --accent: #4f7f9f;
+      --radius: 8px;
+      --shadow: 0 18px 48px rgba(20, 32, 51, .08);
     }
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Vazirmatn","Inter",sans-serif;background:linear-gradient(180deg,#fffaf1 0%,var(--bg) 42%,#ffffff 100%);color:var(--text);text-align:right;overflow-x:hidden}
-    body::before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 82% 8%,rgba(212,154,58,.18),transparent 28%),radial-gradient(circle at 12% 18%,rgba(31,122,140,.12),transparent 24%)}
-    a{color:inherit;text-decoration:none}img{max-width:100%;display:block}p{margin:0}.container{inline-size:min(1180px,92%);margin-inline:auto}.section{padding:5.5rem 0;position:relative}
-    .nav{position:fixed;inset-block-start:0;inset-inline:0;z-index:1000;height:76px;background:rgba(255,250,241,.78);backdrop-filter:blur(18px);border-block-end:1px solid transparent;transition:.3s}
-    .nav.scrolled{height:68px;background:rgba(255,253,248,.94);border-block-end-color:var(--line);box-shadow:0 10px 30px rgba(64,44,18,.08)}
-    .nav__inner{height:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem}
-    .brand{justify-self:start;display:inline-flex;align-items:center;gap:.7rem;font-weight:800;color:var(--ink)}
-    .brand__logo{inline-size:92px;block-size:52px;border-radius:16px;object-fit:contain;background:var(--surface-strong);border:1px solid var(--line);padding:.12rem;box-shadow:0 10px 24px rgba(15,76,92,.1)}
-    .brand__fallback{inline-size:44px;block-size:44px;border-radius:16px;display:none;place-items:center;background:var(--brand);color:#fff;font-weight:800;box-shadow:0 10px 24px rgba(15,76,92,.16)}
-    .brand__copy{display:grid;line-height:1.25}.brand__copy small{font-size:.72rem;color:var(--muted);font-weight:500}.brand span{color:var(--brand)}
-    .nav__links{display:flex;gap:1.35rem;justify-content:center}.nav__link{font-size:.95rem;color:var(--muted);transition:.2s}.nav__link.active,.nav__link:hover{color:var(--brand)}
-    .nav__cta{justify-self:end;padding:.68rem 1.08rem;border-radius:999px;background:var(--brand);color:#fff;box-shadow:0 16px 34px rgba(15,76,92,.18);font-size:.9rem;font-weight:700}
-    .menu-btn{display:none;justify-self:end;background:var(--surface-strong);border:1px solid var(--line);color:var(--brand);border-radius:14px;font-size:1.35rem;inline-size:44px;block-size:44px}
-    .mobile-menu{max-height:0;overflow:hidden;background:rgba(255,253,248,.98);transition:max-height .3s ease;border-block-end:1px solid var(--line)}.mobile-menu.open{max-height:320px}
-    .mobile-menu a{display:block;padding:1rem 4%;border-block-end:1px solid var(--line);color:var(--muted)}
-    .hero{min-height:100svh;padding-top:112px;display:grid;align-items:center;position:relative;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:96px 0 auto 0;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
-    .shape{position:absolute;border-radius:999px;filter:blur(8px);opacity:.55;animation:float 7s ease-in-out infinite;z-index:-1}
-    .shape--1{inline-size:260px;block-size:260px;background:var(--mint);inset-inline-end:7%;inset-block-start:18%}
-    .shape--2{inline-size:190px;block-size:190px;background:var(--accent-soft);inset-inline-start:9%;inset-block-end:16%;animation-delay:1.2s}
-    .hero__grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);gap:2rem;align-items:center}
-    .hero__content{max-width:760px}.badge{display:inline-flex;gap:.45rem;align-items:center;padding:.5rem .95rem;border:1px solid rgba(15,76,92,.16);border-radius:999px;background:rgba(255,255,255,.72);color:var(--brand);font-size:.86rem;font-weight:700}
-    h1{font-size:clamp(2.45rem,5.7vw,4.9rem);line-height:1.12;margin:1rem 0;font-weight:800;letter-spacing:-.025em;color:var(--ink)}
-    h1 span{color:var(--brand)}.lead{max-width:760px;color:var(--muted);font-size:1.05rem;line-height:2}
-    .hero__actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;padding:.9rem 1.35rem;border-radius:16px;font-weight:700;border:1px solid transparent;transition:.3s cubic-bezier(.4,0,.2,1)}
-    .btn:hover{transform:translateY(-2px)}.btn--primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;box-shadow:0 18px 38px rgba(15,76,92,.2)}.btn--ghost{background:rgba(255,255,255,.7);border-color:var(--line);color:var(--brand)}
-    .hero-card{background:rgba(255,253,248,.86);border:1px solid var(--line);border-radius:32px;padding:1.35rem;box-shadow:var(--shadow)}
-    .hero-card__top{display:flex;align-items:center;gap:.85rem;margin-bottom:1rem}.hero-card__top img{inline-size:96px;block-size:54px;border-radius:20px;object-fit:contain;background:#fff;border:1px solid var(--line);padding:.12rem}.hero-card__top b{display:block;color:var(--ink);font-size:1.08rem}.hero-card__top span{color:var(--muted);font-size:.88rem}
-    .hero-card ul{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}.hero-card li{display:flex;gap:.55rem;align-items:flex-start;color:var(--text);line-height:1.8}.hero-card li::before{content:"✓";flex:0 0 24px;inline-size:24px;block-size:24px;display:grid;place-items:center;border-radius:50%;background:var(--mint);color:var(--brand);font-weight:800}
-    .stats{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}.stat{min-width:145px;padding:1rem;background:rgba(255,255,255,.64);border:1px solid var(--line);border-radius:20px}.stat b{display:block;font-size:1.5rem;color:var(--brand)}.stat span{color:var(--muted);font-size:.9rem}
-    .scroll-indicator{margin-top:1.7rem;display:inline-block;color:var(--muted);animation:bounce 1.8s infinite}.label{display:inline-block;padding:.38rem .78rem;border:1px solid rgba(15,76,92,.16);border-radius:999px;font-size:.78rem;color:var(--brand);background:var(--mint);font-weight:700}
-    .section h2{font-size:clamp(1.8rem,3vw,2.85rem);margin:.8rem 0 1rem;color:var(--ink);line-height:1.35}.section-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}.section-head .lead{max-width:560px}
-    .bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1rem}.card{background:rgba(255,253,248,.9);border:1px solid var(--line);border-radius:var(--radius);padding:1.35rem;box-shadow:0 14px 36px rgba(64,44,18,.07);transition:.3s cubic-bezier(.4,0,.2,1)}
-    .card:hover{transform:translateY(-4px);border-color:rgba(15,76,92,.25);box-shadow:var(--shadow)}.card h3{font-size:1.25rem;margin:.7rem 0;color:var(--ink)}.card p,.card li{color:var(--muted);line-height:1.95}.card--lg{grid-column:span 8}.card--md{grid-column:span 4}.card--wide{grid-column:1/-1}
-    .pill{display:inline-block;padding:.32rem .7rem;border-radius:999px;background:var(--accent-soft);border:1px solid rgba(212,154,58,.32);font-size:.8rem;color:#8a5a12;font-weight:700}.payments{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.9rem}.payments span{font-size:.78rem;padding:.38rem .7rem;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--brand);font-weight:700}
-    .swiper{padding:1rem .2rem 3rem;direction:rtl}.swiper-slide .card{height:100%}.swiper-nav{display:flex;gap:.6rem;justify-content:flex-start}.sw-btn{inline-size:44px;block-size:44px;border:1px solid var(--line);background:#fff;color:var(--brand);border-radius:14px;font-size:1rem}
-    .features .item{padding:1.25rem 0;border-block-end:1px solid var(--line)}.item{display:grid;grid-template-columns:84px 1fr;gap:1rem;align-items:start}.item .n{font-size:2rem;font-weight:800;color:rgba(15,76,92,.16)}.item p{color:var(--muted);line-height:1.9}
-    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;position:relative}.process-grid::before{content:"";position:absolute;inset-inline:8%;inset-block-start:28px;height:2px;background:linear-gradient(90deg,var(--brand),var(--accent));opacity:.25}
-    .step{background:rgba(255,253,248,.92);border:1px solid var(--line);border-radius:18px;padding:1.6rem 1rem 1rem;position:relative;color:var(--muted);line-height:1.8}.step strong{display:block;color:var(--ink);margin-bottom:.35rem}.step::before{content:attr(data-step);position:absolute;inset-inline-start:12px;inset-block-start:-16px;inline-size:38px;block-size:38px;border-radius:50%;display:grid;place-items:center;background:var(--brand);color:#fff;border:4px solid var(--bg-soft);font-weight:800}
-    .trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.contact{display:grid;grid-template-columns:1fr;gap:1rem}.method{display:inline-flex;gap:.45rem;padding:.65rem .9rem;border:1px solid var(--line);border-radius:14px;margin:.4rem 0 0 .5rem;background:#fff;color:var(--brand);font-weight:700}.quiet-list{margin:1rem 0 0;padding:0;list-style:none;display:grid;gap:.55rem}.quiet-list li{color:var(--muted);line-height:1.9}
-    footer{border-top:1px solid var(--line);padding:2.4rem 0;color:var(--muted);background:rgba(255,253,248,.68)}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem}.footer-brand{display:flex;align-items:center;gap:.7rem;color:var(--ink)}.footer-brand img{inline-size:92px;block-size:52px;border-radius:16px;object-fit:contain;background:#fff;border:1px solid var(--line);padding:.12rem}
-    .reveal{opacity:0;transform:translateY(30px);transition:.6s}.reveal.visible{opacity:1;transform:none}
-    @keyframes float{50%{transform:translateY(-16px)}}@keyframes bounce{50%{transform:translateY(8px)}}
-    @media (max-width:960px){.nav{height:72px}.nav__links,.nav__cta{display:none}.menu-btn{display:block}.nav__inner{grid-template-columns:1fr auto}.brand__logo{inline-size:82px;block-size:48px}.hero{padding-top:100px}.hero__grid{grid-template-columns:1fr}.hero-card{order:-1}
-      .card--lg,.card--md,.process-grid>*{grid-column:1/-1}.process-grid{grid-template-columns:1fr}.process-grid::before{display:none}.trust-row,.contact,.footer-grid{grid-template-columns:1fr}.section-head{display:block}}
-    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    p,
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 255, 255, .94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+      color: var(--ink);
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 3px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: .76rem;
+      font-weight: 500;
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: .94rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--brand);
+    }
+
+    .nav-contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      color: var(--brand);
+      font-weight: 700;
+      font-size: .92rem;
+      background: #fff;
+    }
+
+    .menu-button {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--ink);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    .menu-icon::before {
+      transform: translateY(-6px);
+    }
+
+    .menu-icon::after {
+      transform: translateY(4px);
+    }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 14px 20px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+      font-weight: 500;
+    }
+
+    .hero {
+      padding: 96px 0 72px;
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border: 1px solid #c7d7e5;
+      border-radius: var(--radius);
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-top: 18px;
+      color: var(--ink);
+      font-size: clamp(2.45rem, 5vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+      max-width: 820px;
+    }
+
+    .hero-text {
+      margin-top: 22px;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      font-weight: 700;
+      font-size: .95rem;
+    }
+
+    .button-primary {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(29, 79, 117, .16);
+    }
+
+    .button-secondary {
+      background: #fff;
+      color: var(--brand);
+      border-color: var(--line-strong);
+    }
+
+    .research-panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface-muted);
+    }
+
+    .panel-header strong {
+      display: block;
+      color: var(--ink);
+      font-size: .98rem;
+    }
+
+    .panel-header span {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .workflow {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .workflow-row {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px 20px;
+      background: #fff;
+    }
+
+    .workflow-index {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius);
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .workflow-row h3 {
+      color: var(--ink);
+      font-size: .98rem;
+      margin-bottom: 4px;
+    }
+
+    .workflow-row p {
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.55;
+    }
+
+    .section {
+      padding: 78px 0;
+    }
+
+    .section-soft {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      color: var(--ink);
+      font-size: clamp(1.8rem, 3vw, 2.65rem);
+      line-height: 1.16;
+      letter-spacing: 0;
+      margin-top: 12px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin-top: 14px;
+      font-size: 1rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 24px;
+    }
+
+    .card h3 {
+      color: var(--ink);
+      font-size: 1.08rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .approach-list {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 36px;
+      align-items: start;
+    }
+
+    .principles {
+      display: grid;
+      gap: 12px;
+    }
+
+    .principle {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principle:last-child {
+      border-bottom: 0;
+    }
+
+    .check {
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius);
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-weight: 800;
+      font-size: .82rem;
+    }
+
+    .principle h3 {
+      color: var(--ink);
+      font-size: 1.02rem;
+      margin-bottom: 4px;
+    }
+
+    .principle p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .note {
+      border: 1px solid #c7d7e5;
+      border-radius: var(--radius);
+      background: var(--brand-soft);
+      padding: 22px;
+      color: #254967;
+      font-size: .98rem;
+    }
+
+    .contact-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-block h2 {
+      color: var(--ink);
+      font-size: clamp(1.55rem, 3vw, 2.25rem);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .contact-block p {
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    .email-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .site-footer {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        width: min(100% - 32px, 1120px);
+      }
+
+      .nav-links,
+      .nav-contact {
+        display: none;
+      }
+
+      .menu-button {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .hero {
+        padding: 64px 0 56px;
+      }
+
+      .hero-grid,
+      .approach-list,
+      .contact-block {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-block {
+        padding: 24px;
+      }
+
+      .email-link {
+        width: 100%;
+      }
+
+      .footer-inner {
+        display: grid;
+      }
+    }
+
+    @media (max-width: 560px) {
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .workflow-row {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- ناوبری -->
-  <header class="nav" id="topNav"><div class="container nav__inner"><a class="brand" href="#hero"><img class="brand__logo" src="logo.png" alt="لوگوی کافه‌نت" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" /><span class="brand__fallback">ک</span><span class="brand__copy"><strong>Kafe<span>net</span></strong><small>همراه دیجیتال شما</small></span></a><nav class="nav__links"><a class="nav__link" href="#hero">خانه</a><a class="nav__link" href="#services">خدمات</a><a class="nav__link" href="#popular">سرویس‌ها</a><a class="nav__link" href="#contact">تماس</a></nav><a class="nav__cta" href="#contact">شروع یک درخواست</a><button class="menu-btn" id="menuBtn" aria-label="منو">☰</button></div><div class="mobile-menu" id="mobileMenu"><a href="#hero">خانه</a><a href="#services">خدمات</a><a href="#popular">سرویس‌ها</a><a href="#contact">تماس</a></div></header>
-  <main>
-    <!-- هیرو -->
-    <section class="hero" id="hero"><span class="shape shape--1"></span><span class="shape shape--2"></span><div class="container hero__grid reveal"><div class="hero__content"><span class="badge">خدمات دیجیتال، ساده و قابل پیگیری</span><h1>انجام امور آنلاین شما در <span>نهایت دقت</span>؛ شما استراحت کنید، ما کارها را پیش می‌بریم.</h1><p class="lead">از ثبت درخواست‌های روزمره کافه‌نتی تا VPS، توسعه نرم‌افزار و پرداخت‌های بین‌المللی؛ ما کنار شما هستیم تا مسیر روشن باشد، هزینه‌ها شفاف باشند و پاسخ‌ها انسانی و سریع برسند.</p><div class="hero__actions"><a class="btn btn--primary" href="#contact">می‌خواهم مشاوره بگیرم</a><a class="btn btn--ghost" href="#services">خدمات را ببینم</a></div><div class="stats"><div class="stat"><b data-count="420">۰</b><span>مشتری همراه</span></div><div class="stat"><b data-count="8">۰</b><span>سال تجربه عملی</span></div><div class="stat"><b data-count="120">۰</b><span>درخواست انجام‌شده</span></div></div><span class="scroll-indicator">⌄</span></div><aside class="hero-card"><div class="hero-card__top"><img src="logo.png" alt="لوگوی کافه‌نت" onerror="this.style.display='none'" /><div><b>«کافه‌نت»؛ با همان حس آشنا، اما مرتب‌تر، حرفه‌ای‌تر و مطمئن‌تر.</b><span>یک نقطه تماس برای چندین نیاز دیجیتال</span></div></div><ul><li>قبل از شروع، مسیر انجام کار و هزینه را شفاف توضیح می‌دهیم.</li><li>درخواست‌ها را مرحله‌به‌مرحله پیگیری می‌کنیم، نه با پاسخ‌های مبهم.</li><li>لحن ما رسمیِ خشک نیست؛ محترمانه، صمیمی و دقیق کنار شما هستیم.</li></ul></aside></div></section>
-    <!-- خدمات -->
-    <section class="section" id="services"><div class="container"><div class="section-head"><div><span class="label">خدمات ما</span><h2>برای وقتی که می‌خواهید کارتان درست و بی‌دردسر انجام شود</h2></div><p class="lead">هر خدمت با توضیح ساده، زمان‌بندی قابل فهم و پیگیری واقعی ارائه می‌شود؛ همان چیزی که از یک تیم حرفه‌ای انتظار دارید.</p></div><div class="bento"><article class="card card--wide reveal"><span class="pill">پرطرفدار</span><h3>پرداخت و خدمات مالی بین‌المللی</h3><p>برای خریدها و پرداخت‌های خارجی، با دقت در جزئیات و توضیح شفاف ریسک‌ها و هزینه‌ها همراهتان هستیم.</p><p>می‌خواهید برای عزیزانتان پول انتقال دهید یا دریافت کنید؟ ما کنار شما هستیم تا مسیر امن‌تر، شفاف‌تر و قابل پیگیری باشد.</p><p class="pill" style="margin-top:.7rem">کارمزد: فقط 2 دلار برای تمام خدمات این بخش</p><div class="payments"><span>SWIFT</span><span>IBAN</span><span>Visa</span><span>Mastercard</span><span>Crypto</span></div></article><article class="card card--lg reveal"><span class="pill">پرطرفدار</span><h3>سرور مجازی (VPS)</h3><p>VPS پایدار و اقتصادی برای توسعه، ترید، اجرای ابزارها و سرویس‌های سبک. قبل از خرید، منابع، محدودیت‌ها و مناسب بودن سرویس برای کار شما روشن می‌شود.</p><p class="pill" style="margin-top:.7rem">شروع قیمت: از 2.3 دلار در ماه</p><p style="margin-top:.8rem"><a href="vps.html">مشاهده صفحه اختصاصی VPS</a></p></article><article class="card card--md reveal"><h3>خدمات کافی‌نت عمومی و تخصصی</h3><p>ثبت‌نام‌ها، فرم‌ها، امور دانشجویی، ترجمه، تایپ و فرمت‌بندی را با دقت انجام می‌دهیم و تا پایان کار کنار شما می‌مانیم.</p></article><article class="card card--md reveal"><h3>برنامه‌نویسی و توسعه</h3><p>طراحی سایت، سیستم اختصاصی، API و اتوماسیون برای کسب‌وکارهایی که راه‌حل تمیز و قابل نگهداری می‌خواهند.</p></article><article class="card card--md reveal"><h3>پشتیبانی فنی</h3><ul><li>بررسی و نگهداری سرورها و سیستم‌ها</li><li>پشتیبانی ویندوز سرور و لینوکس</li><li>رفع خطا، بهینه‌سازی و مستندسازی کار انجام‌شده</li></ul></article></div></div></section>
-    <section class="section" id="popular"><div class="container"><div class="section-head"><div><span class="label">سرویس‌های محبوب</span><h2>خدمات پرطرفدار ما</h2></div><p class="lead">مطمئن نیستید از کجا شروع کنید؟ فقط نیازتان را بگویید تا بهترین مسیر را به شما پیشنهاد دهیم.</p></div><div class="swiper-nav"><button class="sw-btn" id="prevBtn" aria-label="قبلی">→</button><button class="sw-btn" id="nextBtn" aria-label="بعدی">←</button></div><div class="swiper" id="popularSwiper" dir="rtl"><div class="swiper-wrapper"><div class="swiper-slide"><article class="card"><h3>هوش مصنوعی و ابزارهای کاری</h3><p>تهیه، تمدید یا راهنمایی استفاده از ابزارهایی مثل ChatGPT، Gemini، Claude، Copilot و سرویس‌های مشابه.</p></article></div><div class="swiper-slide"><article class="card"><h3>آموزش زبان و اکانت‌های آموزشی</h3><p>کمک برای دسترسی به سرویس‌های آموزشی و زبان، با توضیح ساده درباره شرایط هر سرویس.</p></article></div><div class="swiper-slide"><article class="card"><h3>سرور، VPS و هاستینگ</h3><p>انتخاب سرویس مناسب از ارائه‌دهندگان مختلف، راه‌اندازی اولیه و تحویل قابل استفاده.</p></article></div><div class="swiper-slide"><article class="card"><h3>پرداخت و خرید ارزی</h3><p>از هر کجای دنیا که می‌خواهید خرید کنید؛ ما با شفافیت کامل در تمام مسیر کنارتان هستیم.</p></article></div><div class="swiper-slide"><article class="card"><h3>ابزارهای دسترسی و اتصال</h3><p>بررسی نیاز شما و پیشنهاد راهکار مناسب برای اتصال پایدارتر و امن‌تر.</p></article></div></div></div></div></section>
-    <section class="section features"><div class="container"><span class="label">چرا ما؟</span><h2>ما در «کافه‌نت» به نتیجه کار اهمیت می‌دهیم؛ تعهد ما فراتر از یک ویترین زیباست.</h2><div class="item reveal"><div class="n">۰۱</div><div><h3>چند خدمت در یک مسیر منظم</h3><p>لازم نیست برای هر کار دنبال یک نفر تازه بگردید؛ درخواست را می‌شنویم و مسیر انجامش را مرتب می‌کنیم.</p></div></div><div class="item reveal"><div class="n">۰۲</div><div><h3>پشتیبانی صمیمانه و شفاف</h3><p>در هر مرحله از کار، شما را در جریان جزئیات قرار می‌دهیم و همیشه برای پاسخ به سوالاتتان آماده‌ایم.</p></div></div><div class="item reveal"><div class="n">۰۳</div><div><h3>شفافیت در هزینه و انتظار</h3><p>قبل از شروع، محدوده کار، هزینه و نکات مهم را با زبان ساده مطرح می‌کنیم.</p></div></div><div class="item reveal"><div class="n">۰۴</div><div><h3>تجربه عملی در پروژه‌های مختلف</h3><p>از امور روزمره آنلاین تا کارهای فنی‌تر، تجربه ما کمک می‌کند مسیر کوتاه‌تر و کم‌ریسک‌تر شود.</p></div></div></div></section>
-    <section class="section process"><div class="container"><span class="label">روند همکاری</span><h2>از پیام اول تا تحویل نهایی، همه چیز قابل پیگیری است</h2><div class="process-grid"><article class="step" data-step="۱"><strong>شرح نیاز</strong>چند خط درباره کاری که می‌خواهید انجام شود می‌نویسید.</article><article class="step" data-step="۲"><strong>بررسی و پیشنهاد</strong>راه‌حل مناسب، هزینه و نکات مهم را شفاف توضیح می‌دهیم.</article><article class="step" data-step="۳"><strong>اجرا</strong>کار با دقت انجام می‌شود و اگر نیاز به تصمیم شما باشد، هماهنگ می‌کنیم.</article><article class="step" data-step="۴"><strong>تحویل و پشتیبانی</strong>نتیجه را تحویل می‌دهیم و برای سوال‌های بعد از تحویل کنار شما هستیم.</article></div></div></section>
-    <section class="section"><div class="container"><div class="trust-row"><article class="card"><h3 data-count="420">۰+</h3><p>مشتری که با اعتماد کارشان را سپرده‌اند</p></article><article class="card"><h3 data-count="8">۰+</h3><p>سال تجربه در کارهای دیجیتال و فنی</p></article><article class="card"><h3 data-count="120">۰+</h3><p>درخواست و پروژه تکمیل‌شده</p></article></div><p class="lead" style="margin-top:1rem">هدف ما این است که سایت و خدمات، حس تاریکی و پیچیدگی ندهند؛ همه چیز باید روشن، قابل اعتماد و نزدیک به زبان واقعی مشتری باشد.</p></div></section>
-    <section class="section" id="contact"><div class="container contact"><article class="card"><span class="label">شروع گفتگو</span><h2>شما نیازتان را بگویید، پیدا کردن بهترین راه‌حل با ما.</h2><p class="lead">برای ثبت سفارش یا گرفتن مشاوره، از راه‌های زیر با ما در ارتباط باشید. اگر موضوع پیچیده باشد، مرحله‌به‌مرحله سؤال می‌پرسیم تا دقیق جلو برویم.</p><a class="method" href="https://t.me/H0_0M" target="_blank" rel="noopener">تلگرام: @H0_0M</a><a class="method" href="tel:+447868188304">تماس: +447868188304</a><a class="method" href="mailto:kusarok@gmail.com">ایمیل: kusarok@gmail.com</a><ul class="quiet-list"><li>پاسخ‌ها واضح و قابل پیگیری هستند.</li><li>قبل از پرداخت، محدوده کار و هزینه اعلام می‌شود.</li><li>برای کارهای فنی، تحویل با توضیح کوتاه همراه است.</li></ul></article></div></section>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Kafenet home">
+        <img src="logo.png" alt="Kafenet logo" onerror="this.style.display='none'" />
+        <span>Kafenet<small>AI research and engineering</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#what-we-build">What we build</a>
+        <a href="#approach">Our approach</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-contact" href="mailto:info@kafenet.com">info@kafenet.com</a>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false"><span class="menu-icon" aria-hidden="true"></span></button>
+    </div>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+      <a href="#what-we-build">What we build</a>
+      <a href="#approach">Our approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Market intelligence research</span>
+          <h1>AI-assisted market intelligence for financial analysts</h1>
+          <p class="hero-text">We are developing machine learning models that help analysts interpret market data, evaluate signals, and support more structured financial market research.</p>
+          <p class="hero-text">Our work focuses on decision-support, data-driven analysis, model-assisted research, and risk-aware insights. The goal is to strengthen analyst workflows, not replace professional judgment.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">Contact the team</a>
+            <a class="button button-secondary" href="#what-we-build">Learn what we build</a>
+          </div>
+        </div>
+        <aside class="research-panel" aria-label="Research workflow overview">
+          <div class="panel-header">
+            <strong>Structured analysis workflow</strong>
+            <span>Built for careful research and analyst review</span>
+          </div>
+          <div class="workflow">
+            <div class="workflow-row">
+              <span class="workflow-index">01</span>
+              <div>
+                <h3>Market data preparation</h3>
+                <p>Normalize market, order flow, and historical data for consistent downstream analysis.</p>
+              </div>
+            </div>
+            <div class="workflow-row">
+              <span class="workflow-index">02</span>
+              <div>
+                <h3>Signal evaluation</h3>
+                <p>Assess candidate signals with context, model feedback, and risk-aware interpretation.</p>
+              </div>
+            </div>
+            <div class="workflow-row">
+              <span class="workflow-index">03</span>
+              <div>
+                <h3>Predictive research</h3>
+                <p>Explore model outputs as decision-support for further analyst investigation.</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="what-we-build">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">What we build</span>
+          <h2>Model-assisted tools for structured financial market analysis</h2>
+          <p>We are building an AI model designed to help financial market analysts improve decision-making through structured market data analysis, signal evaluation, and predictive research.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Market data analysis</h3>
+            <p>Systems for organizing and interpreting market data, historical patterns, and contextual inputs in a repeatable research process.</p>
+          </article>
+          <article class="card">
+            <h3>Order flow research</h3>
+            <p>Research workflows that examine order flow behavior as part of a broader analyst-led evaluation process.</p>
+          </article>
+          <article class="card">
+            <h3>Signal evaluation</h3>
+            <p>Model-assisted signal review that supports analyst judgment without presenting signals as guarantees or trading instructions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="approach">
+      <div class="container approach-list">
+        <div class="section-heading">
+          <span class="eyebrow">Our approach</span>
+          <h2>Research discipline, data quality, and analyst-in-the-loop workflows</h2>
+          <p>Financial market prediction is treated as research and decision-support. We focus on transparent model evaluation, practical constraints, and responsible use inside professional analysis workflows.</p>
+        </div>
+        <div class="principles">
+          <div class="principle">
+            <span class="check">1</span>
+            <div>
+              <h3>Data quality first</h3>
+              <p>Inputs are structured, reviewed, and prepared so model outputs can be evaluated with appropriate context.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <span class="check">2</span>
+            <div>
+              <h3>Measured model evaluation</h3>
+              <p>Research emphasizes validation, limitations, and repeatable analysis instead of promotional performance claims.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <span class="check">3</span>
+            <div>
+              <h3>Risk-aware insights</h3>
+              <p>Outputs are designed to support careful review of uncertainty, market context, and analyst-defined risk considerations.</p>
+            </div>
+          </div>
+          <div class="principle">
+            <span class="check">4</span>
+            <div>
+              <h3>Analyst workflow support</h3>
+              <p>The system is built to assist professionals in research, comparison, and decision preparation while keeping analysts in control.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="note">
+          Kafenet does not present market analysis as guaranteed outcomes, investment advice, or a promise of profit. Our work is focused on market intelligence, model-assisted research, and decision-support for professional analysis.
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="contact">
+      <div class="container">
+        <div class="contact-block">
+          <div>
+            <h2>Contact Kafenet</h2>
+            <p>For research, engineering, or collaboration inquiries related to AI-assisted financial market analysis, contact the team by email.</p>
+          </div>
+          <a class="email-link" href="mailto:info@kafenet.com">info@kafenet.com</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer><div class="container footer-grid"><div><h3 class="footer-brand"><img src="logo.png" alt="لوگوی کافه‌نت" onerror="this.style.display='none'" /><span>Kafe<span style="color:var(--brand)">net</span></span></h3><p>کافه‌نت برای انجام خدمات دیجیتال، مالی و فنی با زبانی روشن و رفتاری قابل اعتماد ساخته شده است؛ جایی که مشتری بداند چه چیزی سفارش داده، چه زمانی تحویل می‌گیرد و اگر سوالی داشت با چه کسی صحبت می‌کند.</p></div><div><h4>لینک‌ها</h4><p><a href="#services">خدمات</a></p><p><a href="#popular">سرویس‌ها</a></p><p><a href="#contact">تماس</a></p></div><div><h4>ارتباط</h4><p><a href="https://t.me/H0_0M" target="_blank" rel="noopener">تلگرام</a></p><p><a href="tel:+447868188304">تماس</a></p><p><a href="mailto:kusarok@gmail.com">ایمیل</a></p></div></div><div class="container" style="margin-top:1rem;border-top:1px solid var(--line);padding-top:1rem">© ۱۴۰۵ Kafenet — خدمات دیجیتال و مالی با همراهی واقعی</div></footer>
-  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>&copy; <span id="year"></span> Kafenet. AI research and engineering.</span>
+      <div class="footer-links">
+        <a href="#what-we-build">What we build</a>
+        <a href="#approach">Approach</a>
+        <a href="mailto:info@kafenet.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    (() => {
-      const toFa = n => n.toString().replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
-      const nav = document.getElementById('topNav');
-      window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>80));
-      const menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');
-      menuBtn?.addEventListener('click',()=>mobileMenu.classList.toggle('open'));
-      const observer=new IntersectionObserver((entries)=>entries.forEach(e=>e.isIntersecting&&e.target.classList.add('visible')),{threshold:.15});
-      document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-      const countObserver=new IntersectionObserver((entries)=>entries.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;const end=+el.dataset.count;let i=0;const t=setInterval(()=>{i++;el.textContent=toFa(i)+(el.tagName==='H3'?'+':'');if(i>=end)clearInterval(t)},16);countObserver.unobserve(el)}),{threshold:.4});
-      document.querySelectorAll('[data-count]').forEach(el=>countObserver.observe(el));
-      const links=[...document.querySelectorAll('.nav__link')],sections=links.map(l=>document.querySelector(l.getAttribute('href'))).filter(Boolean);
-      const sectionObserver=new IntersectionObserver((ents)=>ents.forEach(ent=>{if(ent.isIntersecting){links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+ent.target.id));}}),{rootMargin:'-45% 0px -45% 0px'});
-      sections.forEach(s=>sectionObserver.observe(s));
-      document.addEventListener('DOMContentLoaded',()=>{
-        const sw=new Swiper('#popularSwiper',{slidesPerView:1,spaceBetween:16,autoplay:{delay:4000,disableOnInteraction:false,pauseOnMouseEnter:true},breakpoints:{640:{slidesPerView:2},1024:{slidesPerView:3}}});
-        document.getElementById('nextBtn').addEventListener('click',()=>sw.slideNext());
-        document.getElementById('prevBtn').addEventListener('click',()=>sw.slidePrev());
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuButton.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
       });
-    })();
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
