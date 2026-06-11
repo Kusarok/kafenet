@@ -359,7 +359,7 @@
 
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 16px;
     }
 
@@ -475,6 +475,27 @@
       white-space: nowrap;
     }
 
+    .contact-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .phone-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line-strong);
+      background: #fff;
+      color: var(--brand);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
     .site-footer {
       padding: 34px 0;
       border-top: 1px solid var(--line);
@@ -522,7 +543,7 @@
       }
 
       .grid-3 {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .contact-block {
@@ -530,6 +551,15 @@
       }
 
       .email-link {
+        width: 100%;
+      }
+
+      .contact-methods {
+        display: grid;
+        justify-content: stretch;
+      }
+
+      .phone-link {
         width: 100%;
       }
 
@@ -552,6 +582,10 @@
       }
 
       .workflow-row {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 {
         grid-template-columns: 1fr;
       }
 
@@ -648,6 +682,10 @@
             <h3>Signal evaluation</h3>
             <p>Model-assisted signal review that supports analyst judgment without presenting signals as guarantees or trading instructions.</p>
           </article>
+          <article class="card">
+            <h3>Open-source model research</h3>
+            <p>Fine-tuning and evaluating open-source AI models for structured market research.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -705,9 +743,12 @@
         <div class="contact-block">
           <div>
             <h2>Contact Kafenet</h2>
-            <p>For research, engineering, or collaboration inquiries related to AI-assisted financial market analysis, contact the team by email.</p>
+            <p>For research, engineering, or collaboration inquiries related to AI-assisted financial market analysis, contact the team by email or phone.</p>
           </div>
-          <a class="email-link" href="mailto:info@kafenet.com">info@kafenet.com</a>
+          <div class="contact-methods">
+            <a class="email-link" href="mailto:info@kafenet.com">info@kafenet.com</a>
+            <a class="phone-link" href="tel:+447868188304">+44 7868 188304</a>
+          </div>
         </div>
       </div>
     </section>
@@ -720,6 +761,7 @@
         <a href="#what-we-build">What we build</a>
         <a href="#approach">Approach</a>
         <a href="mailto:info@kafenet.com">Contact</a>
+        <a href="tel:+447868188304">Phone</a>
       </div>
     </div>
   </footer>
