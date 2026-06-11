@@ -6,8 +6,7 @@ This is a static website (HTML/CSS/JS only) deployed to GitHub Pages at `kafenet
 
 ### Project structure
 
-- `index.html` — Main landing page (Persian/RTL, dark theme)
-- `vps.html` — VPS services page
+- `index.html` — Main landing page (English, light theme)
 - `logo.png` — Site logo
 - `CNAME` — GitHub Pages custom domain config
 
@@ -24,5 +23,5 @@ Then open `http://localhost:8080/index.html` in Chrome.
 ### Notes
 
 - No lint, test, or build commands exist — this is a plain static site.
-- External CDN resources (Swiper.js, Google Fonts) load at runtime; pages degrade gracefully without internet access.
+- External Google Fonts load at runtime; pages degrade gracefully without internet access.
 - All styling is inline within the HTML files (no separate CSS files).
